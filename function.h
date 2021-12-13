@@ -8,17 +8,19 @@ int pemasukan ();                                    /* Merupakan fungsi yang di
 int transaksi ();                                    /* Merupakan fungsi yang digunakan untuk menampilkan dan menyimpan semua kategori,
                                                         dan inputan transaksi(pengeluaran) user. */
                                                         
-void header ();
+void header ();					     /* Merupakan fungsi yang digunakan untuk menampilkan */
 
 void daftar();                                       /* Fungsi void daftar() untuk menyimpan perintah-perintah yang dibutuhkan
                                                         untuk registrasi yang akan menyimpan nama, username, serta password yang
-                                                        akan digunakan oleh pengguna*/
+                                                        akan digunakan oleh pengguna */
 
 void masuk();                                        /* Fungsi void masuk() digunakan agar pengguna dapat masuk dengan username serta
-                                                        password yang sudah dibuat dan nantinya akan dilanjutkan kedalam fitur program*/
+                                                        password yang sudah dibuat dan nantinya akan dilanjutkan kedalam fitur home*/
 														
 
-void menu_masuk();                                   // Merupakan fungsi yang digunakan untuk menampilkan pilihan menu masuk Login
+void menu_masuk();                                   /* Merupakan fungsi yang digunakan untuk menampilkan pilihan menu masuk Login */
+
+void home();					     /* Merupakan fungsi yang digunakan untuk menampilkan halaman utama atau home */
 
 void email_pw();                                     /* Merupakan fungsi yang digunakan untuk meminta user untuk menginput Email dan Password
                                                         yang di gunakan untuk Masuk ke dalam program */
