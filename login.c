@@ -112,7 +112,7 @@ void masuk(){
     return;
 }
 void menu_masuk(){
-    int pilihan;
+    int pilihanmasuk;
 
     // Arahan yang diberikan kepada pengguna
     arahan:
@@ -126,10 +126,10 @@ void menu_masuk(){
     printf ("\t\t\t\t\t||   3   |    Exit                           ||\n");
     printf ("\t\t\t\t\t===============================================\n");
     printf ("\t\t\t\t\tInput pilihan Anda = ");
-    scanf  ("%d", &pilihan);
+    scanf  ("%d", &pilihanmasuk);
     system ("clear");
 
-    switch (pilihan){
+    switch (pilihanmasuk){
     case 1:
         // Jika pengguna menginput angka 1 maka dipanggil fungsi masuk
         masuk();
