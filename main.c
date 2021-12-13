@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "login.c"
 #include "tubes.c"
-#include "display.c"
+#include "menu.c"
 
 // fungsi main () adalah kepala dari program ini, dimana program akan di eksekusi oleh fungsi main ini.
 int main (){
