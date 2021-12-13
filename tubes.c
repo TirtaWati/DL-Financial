@@ -14,7 +14,7 @@ void header (){
 	printf  ("\t\t\t\t\t||                    &                    ||\n");
 	printf  ("\t\t\t\t\t||         Leony Mona Putri Sihaloho       ||\n");
 	printf  ("\t\t\t\t\t=============================================\n");
-	printf  ("\t\t\t\t\t       Tekan ENTER  untuk melanjutkan....    \n");
+	printf  ("\t\t\t\t\t        Klik ENTER untuk melanjutkan....    \n");
     printf  ("\t\t\t\t\t=============================================\n");
 	getchar ();
     system ("cls");
