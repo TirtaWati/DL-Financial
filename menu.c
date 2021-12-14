@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "function.h"
-#include "variable.h"
-
 
 /***********************************************************|
 |                     MENU PADA PROGRAM                     |
@@ -14,6 +9,15 @@
 |           dan swict case menu                             |
 ************************************************************/
 
+
+
+//header untuk menampung libraries yang ada baik yang global mapun local
+#include <stdio.h>
+#include <stdlib.h>
+#include "function.h"
+#include "variable.h"
+
+//fungsi untuk menampilkan dan menjalankan menu awal pada program
 void menuawal (void){
     system("clear");
     printf  ("\n\n\t\t\t\t\t=============================================\n");
@@ -25,23 +29,24 @@ void menuawal (void){
 	printf  ("\t\t\t\t\t||             2. REGISTRASI               ||\n");
 	printf  ("\t\t\t\t\t||             3. EXIT                     ||\n");
 	printf  ("\t\t\t\t\t=============================================\n");
-	printf  ("\n\t\t\t\t\t             PILIHAN: ");
-    scanf("%c", &menu1);
+	printf  ("\n\t\t\t\t\t             PILIHAN: ");                         //user memasukan pilihan
+    scanf("%c", &menu1);                                                    //inputan dimasukan ke variable menu1
 
+    //penggunaan switch case untuk setiap menu yang ada
     switch (menu1){
-        case '1':
+        case '1':       //case 1 untuk masuk ke fungsi login()-->file "input.c"
             login();
             break;
-        case '2':
-            registrasi();
+        case '2':       //case 2 untuk masuk ke fungsi registrasi() -->file "input.c"
+            registrasi();       
             break;
-        case '3':
+        case '3':       //case 3 keluar dari program
             exit(0);     
     }
 }
 
+//fungsi untuk menampilkan dan menjalankan menu home pada program
 void home (void){
-    int menu2;
 	printf  ("\t\t\t\t\t=============================================\n");
 	printf  ("\t\t\t\t\t||                  HOME                   ||\n");
 	printf  ("\t\t\t\t\t||     --------------------------------    ||\n");
@@ -51,23 +56,24 @@ void home (void){
     printf  ("\t\t\t\t\t||             4. ACCOUNT INFO             ||\n");
     printf  ("\t\t\t\t\t||             5. EXIT                     ||\n");
 	printf  ("\t\t\t\t\t=============================================\n");
-	printf  ("\n\t\t\t\t\t             PILIHAN: ");
-    scanf("%d", &menu2);
+	printf  ("\n\t\t\t\t\t             PILIHAN: ");                     //user memasukan pilihan 
+    scanf("%d", &menu2);                                                //inputan dimasukan ke variable menu2
 
+    //penggunaan switch case untuk setiap menu yang ada
     switch (menu2){
         case 1:
-            pemasukan();
+            pemasukan();        //case 1 masuk ke fungsi pemasukan()--> file "input.c"
             break;
         case 2:
-            pengeluaran();
+            pengeluaran();      //case 2 masuk ke fungsi pengeluaran()--> file "input.c"
             break;
         case 3:
-            laporan();
+            laporan();          //case 3 masuk ke fungsi laporan()--> file "display.c"
             break;
         case 4:
-            infouser();
+            infouser();         //case 4 masuk ke fungsi infouser()--> file "display.c"
             break;
-        case 5:
+        case 5:                 //case 5 keluar dari program
             exit(0);
                  
     }

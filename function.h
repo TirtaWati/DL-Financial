@@ -1,15 +1,16 @@
+//library local untuk menampung deklarasi fungsi-fungsi yang digunakan dalam program
 #ifndef __FUNCTION_H__
 #define __FUNCTION_H__
 
-void header (void);
-void menuawal (void);
-void home (void);
-void registrasi (void);
-void login (void);
-void infouser (void);
-void pemasukan (void);
-void pengeluaran (void);
-void laporan (void);
+void header (void);             //-->file "display.c"
+void laporan (void);            //-->file "display.c"
+void infouser (void);           //-->file "display.c"
+void menuawal (void);           //-->file "menu.c"
+void home (void);               //-->file "menu.c"
+void registrasi (void);         //-->file "input.c"
+void login (void);              //-->file "input.c"
+void pemasukan (void);          //-->file "input.c"    
+void pengeluaran (void);        //-->file "input.c"
 
 
 #endif
