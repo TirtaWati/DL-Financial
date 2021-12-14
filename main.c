@@ -9,4 +9,5 @@ int main (){
     header();
     system ("clear");
     menu_masuk();
+    home();
 }
