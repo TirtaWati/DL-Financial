@@ -30,18 +30,31 @@
 |            menampilkan nama dari user kemudian menu home  |
 ************************************************************/
 
+/***********************************************************|
+|                    LOGIN & REGISTRASI                     |
+|TANGGAL PEMBUATAN : 14 DESEMBER 2021                       |
+|OLEH : DWI TIRTA WATI                                      |
+|DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN REGISTRASI DAN   |
+|           lOGIN PENGGUNA                                  |
+|REVISI : 3                                                 |
+|DESKRIPSI : menambahkan file logrecord untuk menyimpan     |
+|            value usrname yang ada di login agar dapat     |
+|            melakukan strcmp di fungsi lain (infouser())   |
+************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "struct.h"
+#include "structure.h"
 #include "variable.h"
-#include "fungsi.h"
+#include "function.h"
 #define BUFFER_SIZE 1000
 
 void login (void){
     struct datauser d;
-    FILE *fu;
+    FILE *fu, *fp;
     fu = fopen("info.txt", "r");
+    fp = fopen("logrecord.txt", "w");
     if(fu == NULL){
         printf("ERROR IN OPENING FILE");
 		exit(0);
@@ -57,12 +70,14 @@ void login (void){
     scanf  ("%s", &pass);
     printf ("\t\t\t\t\t--------------------\n");
 
+    fwrite(&usrname, sizeof(usrname), 1, fp);
+
     while(fgets(&d, BUFFER_SIZE, fu)){
         if(strcmp(&usrname, &d.username) == 0 && strcmp(&pass, &d.password) == 0){
             system("clear");
             printf  ("\n\n\t\t\t\t\t=============================================\n");
             printf  ("\t\t\t\t\t||\t    Selamat Datang %s\t   ||\n", &d.nama);
-            menudua();
+            home();
         }
         else if(strcmp(&usrname, &d.username)== 0 && strcmp(&pass, &d.password) != 0 ){
             system("clear");
@@ -77,8 +92,16 @@ void login (void){
 				exit(0);
 			}
         }
+        else{
+            system("clear");
+            printf ("\n\n\t\t\t\t\t==========================================\n");
+            printf("\t\t\t\tUsername tidak terdaftar!\n");
+            printf("\t\tSilahkan melakukan registrasi terlebih dahulu");
+            printf ("\n\n\t\t\t\t\t==========================================\n");
+        }
     }
     fclose(fu);
+    fclose(fp);
 }
 
 void registrasi (void){
