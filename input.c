@@ -27,10 +27,6 @@ void login (void){
 
     while(fgets(&d, BUFFER_SIZE, fu)){
         if(strcmp(&usrname, &d.username) == 0 && strcmp(&pass, &d.password) == 0){
-			system("clear");
-			printf ("\n\n\t\t\t\t\t===============================\n");
-			printf ("\t\t\t\t\tLOGIN BERHASIL!\n");
-			printf ("\t\t\t\t\t===============================\n");
             system("clear");
             printf  ("\n\n\t\t\t\t\t=============================================\n");
             printf  ("\t\t\t\t\t||\t    Selamat Datang %s\t   ||\n", &d.nama);
