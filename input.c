@@ -28,18 +28,13 @@ void login (void){
     while(fgets(&d, BUFFER_SIZE, fu)){
         if(strcmp(&usrname, &d.username) == 0 && strcmp(&pass, &d.password) == 0){
 			system("clear");
-			printf  ("\n\n\t\t\t\t\t==========================================\n");
-			printf  ("\t\t\t\t\t||\t    Selamat Datang %s\t\t||\n", &d.nama);
-			printf  ("\t\t\t\t\t==========================================\n");
-			printf  ("\t\t\t\t\t||\t       ACCOUNT INFO\t\t||\n");
-			printf  ("\t\t\t\t\t||--------------------------------------||\n");
-			printf  ("\t\t\t\t\t||\tNAMA : %s\t\t\t||\n", &d.nama);
-			printf  ("\t\t\t\t\t||\tEMAIL: %s\t\t\t||\n", &d.email);
-			printf  ("\t\t\t\t\t||\tSAKU : %2.f\t\t\t||\n", d.uang);
-			printf  ("\t\t\t\t\t==========================================\n");
-			printf  ("\t\t\t\t\t||     Tekan ENTER  untuk melanjutkan   ||    \n");
-			printf  ("\t\t\t\t\t==========================================\n");
-    		getchar();
+			printf ("\n\n\t\t\t\t\t===============================\n");
+			printf ("\t\t\t\t\tLOGIN BERHASIL!\n");
+			printf ("\t\t\t\t\t===============================\n");
+            system("clear");
+            printf  ("\n\n\t\t\t\t\t=============================================\n");
+            printf  ("\t\t\t\t\t||\t    Selamat Datang %s\t   ||\n", &d.nama);
+            menudua();
         }
         else if(strcmp(&usrname, &d.username)== 0 && strcmp(&pass, &d.password) != 0 ){
             system("clear");
@@ -90,4 +85,9 @@ void registrasi (void){
 	login();
 }
 
+void pemasukan (void){
+    
+}
+void pengeluaran (void){
 
+}

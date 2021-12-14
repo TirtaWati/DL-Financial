@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "fungsi.h"
+#include "struct.h"
 #include "variable.h"
 
 void menuawal (void){
@@ -20,14 +21,36 @@ void menuawal (void){
     switch (menu1){
         case '1':
             login();
-            return(0);
             break;
         case '2':
             registrasi();
-            return(0);
             break;
         case '3':
             exit(0);     
     }
 }
 
+void menudua (void){
+    int menu2;
+	printf  ("\t\t\t\t\t=============================================\n");
+	printf  ("\t\t\t\t\t||                  HOME                   ||\n");
+	printf  ("\t\t\t\t\t||     --------------------------------    ||\n");
+	printf  ("\t\t\t\t\t||             1. PEMASUKAN                ||\n");
+	printf  ("\t\t\t\t\t||             2. PENGELUARAN              ||\n");
+	printf  ("\t\t\t\t\t||             3. LAPORAN                  ||\n");
+    printf  ("\t\t\t\t\t||             4. EXIT                     ||\n");
+	printf  ("\t\t\t\t\t=============================================\n");
+	printf  ("\n\t\t\t\t\t             PILIHAN: ");
+    scanf("%d", &menu2);
+
+    switch (menu2){
+        case 1:
+            pemasukan();
+            break;
+        case 2:
+            pengeluaran();
+            break;
+        case 3:
+            exit(0);     
+    }
+}
