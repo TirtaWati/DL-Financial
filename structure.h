@@ -1,5 +1,5 @@
-#ifndef __STRUCT_H__
-#define __STRUCT_H__ 
+#ifndef __STRUCTURE_H__
+#define __STRUCTURE_H__ 
 
 struct datauser{
     char nama[50];

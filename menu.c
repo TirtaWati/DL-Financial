@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "fungsi.h"
-#include "struct.h"
+#include "function.h"
 #include "variable.h"
+
 
 /***********************************************************|
 |                     MENU PADA PROGRAM                     |
@@ -40,7 +40,7 @@ void menuawal (void){
     }
 }
 
-void menudua (void){
+void home (void){
     int menu2;
 	printf  ("\t\t\t\t\t=============================================\n");
 	printf  ("\t\t\t\t\t||                  HOME                   ||\n");
@@ -48,7 +48,8 @@ void menudua (void){
 	printf  ("\t\t\t\t\t||             1. PEMASUKAN                ||\n");
 	printf  ("\t\t\t\t\t||             2. PENGELUARAN              ||\n");
 	printf  ("\t\t\t\t\t||             3. LAPORAN                  ||\n");
-    printf  ("\t\t\t\t\t||             4. EXIT                     ||\n");
+    printf  ("\t\t\t\t\t||             4. ACCOUNT INFO             ||\n");
+    printf  ("\t\t\t\t\t||             5. EXIT                     ||\n");
 	printf  ("\t\t\t\t\t=============================================\n");
 	printf  ("\n\t\t\t\t\t             PILIHAN: ");
     scanf("%d", &menu2);
@@ -61,6 +62,13 @@ void menudua (void){
             pengeluaran();
             break;
         case 3:
-            exit(0);     
+            laporan();
+            break;
+        case 4:
+            infouser();
+            break;
+        case 5:
+            exit(0);
+                 
     }
 }
