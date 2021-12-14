@@ -7,4 +7,5 @@
 int main (){
     header();    //-->file "diplay.c"
     menuawal();  //-->file "menu.c"
+    
 }

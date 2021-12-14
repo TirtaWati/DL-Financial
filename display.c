@@ -47,7 +47,7 @@ void infouser (void){
 	FILE *fu, *fp;						// penggunaan file handling pada program, mendeklarasikan pointer
 	struct datauser d;					//pointer fu digunakan untuk membuka file info.txt dengan mode read
 	fu = fopen("info.txt", "r");		//pointer fu digunakan untuk membuka file info.txt dengan mode read	
-	fp = fopen("logrec.txt", "r"); 		/* pointer fp digunakan untuk membuka file logrecord.txt dengan mode w 
+	fp = fopen("logrecord.txt", "r"); 		/* pointer fp digunakan untuk membuka file logrecord.txt dengan mode w 
                                 		(dimana data yang tersimpan akan terus berganti setiap kali login dilakukan)*/
 
 	//membaca username yang ada di file info.txt dan mencari kesamaan antar username yang ada di logrecord
@@ -56,11 +56,11 @@ void infouser (void){
 		    system("clear");
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan info user yang ada dan yang sesuai dengan username
 			printf  ("\t\t\t\t\t==========================================\n");	
-			printf  ("\t\t\t\t\t||\t       ACCOUNT INFO\t\t||\n");
-			printf  ("\t\t\t\t\t||--------------------------------------||\n");
-			printf  ("\t\t\t\t\t||\tNAMA : %s\t\t\t||\n", &d.nama);
-			printf  ("\t\t\t\t\t||\tEMAIL: %s\t\t||\n", &d.email);
-			printf  ("\t\t\t\t\t||\tSAKU : %2.f\t\t\t||\n", d.uang);
+			printf  ("\t\t\t\t\t              ACCOUNT INFO\n");
+			printf  ("\t\t\t\t\t------------------------------------------\n");
+			printf  ("\t\t\t\t\t\t  NAMA : %s\n", &d.nama);
+			printf  ("\t\t\t\t\t\t  EMAIL: %s\n", &d.email);
+			printf  ("\t\t\t\t\t\t  SAKU : %2.f\n", d.uang);
 			printf  ("\t\t\t\t\t==========================================\n");
 		}
 	}

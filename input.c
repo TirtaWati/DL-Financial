@@ -84,7 +84,7 @@ void login (void){
         if(strcmp(&usrname, &d.username) == 0 && strcmp(&pass, &d.password) == 0){      //membandingkan apakah username dan password valid
             system("clear");
             printf  ("\n\n\t\t\t\t\t=============================================\n");  //kondisi pertama maka login berhasil
-            printf  ("\t\t\t\t\t||\t    Selamat Datang %s\t   ||\n", &d.nama);
+            printf  ("\t\t\t\t\t\t      Selamat Datang %s\n", &d.nama);
             home();
         }
         else if(strcmp(&usrname, &d.username)== 0 && strcmp(&pass, &d.password) != 0 ){ //membandingkan apakah pass yang diinputkan salah
