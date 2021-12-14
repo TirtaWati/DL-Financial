@@ -1,3 +1,35 @@
+/***********************************************************|
+|                    LOGIN & REGISTRASI                     |
+|TANGGAL PEMBUATAN : 6 DESEMBER 2021                        |
+|OLEH : DWI TIRTA WATI                                      |
+|DESKRIPSI : MEMBUAT FUNGSI UNTUK MELAKUKAN REGISTRASI DAN  |
+|           lOGIN PENGGUNA                                  |
+|REVISI : 0                                                 |
+************************************************************/
+
+/***********************************************************|
+|                    LOGIN & REGISTRASI                     |
+|TANGGAL PEMBUATAN : 7 DESEMBER 2021                        |
+|OLEH : DWI TIRTA WATI                                      |
+|DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN REGISTRASI DAN   |
+|           lOGIN PENGGUNA                                  |
+|REVISI : 1                                                 |
+|DESKRIPSI : Membuat info.txt menyimpan tipa data pada 1    |
+|line, dan menambahkan difine untuk membaca seluruh data di |
+|info.txt                                                   |
+************************************************************/
+
+/***********************************************************|
+|                    LOGIN & REGISTRASI                     |
+|TANGGAL PEMBUATAN : 13 DESEMBER 2021                       |
+|OLEH : DWI TIRTA WATI                                      |
+|DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN REGISTRASI DAN   |
+|           lOGIN PENGGUNA                                  |
+|REVISI : 2                                                 |
+|DESKRIPSI : menambahkan tampilan setelah berhasil login    |
+|            menampilkan nama dari user kemudian menu home  |
+************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

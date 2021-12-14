@@ -4,6 +4,16 @@
 #include "struct.h"
 #include "variable.h"
 
+/***********************************************************|
+|                     MENU PADA PROGRAM                     |
+|TANGGAL PEMBUATAN : 13 DESEMBER 2021                       |
+|OLEH : DWI TIRTA WATI                                      |
+|DESKRIPSI : MENAMBAHKAN MENU HOME PADA PROGRAM             |
+|REVISI : 1                                                 |
+|DESKRIPSI : Membuat fungsi menudua untuk menampung tampilan|
+|           dan swict case menu                             |
+************************************************************/
+
 void menuawal (void){
     system("clear");
     printf  ("\n\n\t\t\t\t\t=============================================\n");
