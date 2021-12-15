@@ -4,11 +4,12 @@
 //Deklarasi fungsi-fungsi yang digunakan pada program catatan keuangan ini:
 int pemasukan ();                                    /* Merupakan fungsi yang digunakan untuk menampilkan dan menyimpan semua kategori,
                                                         dan inputan pemasukan saldo user. */
+int pengeluaran ();                                  //-->file "input.c"
 
 int transaksi ();                                    /* Merupakan fungsi yang digunakan untuk menampilkan dan menyimpan semua kategori,
                                                         dan inputan transaksi(pengeluaran) user. */
                                                         
-void header ();					     /* Merupakan fungsi yang digunakan untuk menampilkan */
+void header ();					     /* Merupakan fungsi yang digunakan untuk menampilkan Header progam */
 
 void daftar();                                       /* Fungsi void daftar() untuk menyimpan perintah-perintah yang dibutuhkan
                                                         untuk registrasi yang akan menyimpan nama, username, serta password yang
@@ -30,5 +31,7 @@ void record(User u1, char file[]);
 void error_alert();                                  /* Merupakan fungsi yang digunakan untuk menampilan pemberitahuan ketika user menginputkan
                                                         pilihan yang salah pada setiap switch case. */
 
+void infouser (void);                                  //-->file "display.c"
 
+void target ();
 #endif
