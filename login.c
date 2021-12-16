@@ -6,28 +6,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-/***********************************************************|
-|                    LOGIN & REGISTRASI                     |
-|TANGGAL PEMBUATAN : 7 DESEMBER 2021                        |
-|OLEH : DWI TIRTA WATI                                      |
-|DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN REGISTRASI DAN   |
-|           lOGIN PENGGUNA                                  |
-|REVISI : 1                                                 |
-|DESKRIPSI : Membuat dataLog.txt menyimpan tipa data pada 1 |
-|line, dan menambahkan difine untuk membaca seluruh data di |
-|info.txt                                                   |
-************************************************************/
-/***********************************************************|
-|                    LOGIN & REGISTRASI                     |
-|TANGGAL PEMBUATAN : 14 DESEMBER 2021                       |
-|OLEH : DWI TIRTA WATI                                      |
-|DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN REGISTRASI DAN   |
-|           lOGIN PENGGUNA                                  |
-|REVISI : 2                                                 |
-|DESKRIPSI : menambahkan file logrecord untuk menyimpan     |
-|            value usrname yang ada di login agar dapat     |
-|            melakukan strcmp di fungsi lain (infouser())   |
-************************************************************/
+/*************************************************************************|
+|**************************     REGISTRASI    ****************************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 7 DESEMBER 2021                                      |
+|OLEH : DWI TIRTA WATI                                                    |
+|DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN REGISTRASI PENGGUNA            |
+|REVISI : 1                                                               |
+|DESKRIPSI : Membuat dataLog.txt menyimpan tipa data pada 1 line, dan     |
+|            menambahkan difine untuk membaca seluruh data di dataLog.txt |
+**************************************************************************/
+
 void daftar(){
     // Membuat pointer regis untuk file "dataLog.txt"
     FILE *registrasi;
@@ -66,7 +55,17 @@ void daftar(){
     // Memanggil fungsi masuk()
     masuk();
 }
-    
+
+/*************************************************************************|
+|***************************    LOGIN     ********************************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 7 DESEMBER 2021                                      |
+|OLEH : DWI TIRTA WATI                                                    |
+|DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN  lOGIN PENGGUNA                |
+|REVISI : 2                                                               |
+|DESKRIPSI : menambahkan file logrecord untuk menyimpan value usrname yang|
+|            ada di login agar dapat melakukan strcmp di fungsi lain      |
+**************************************************************************/
 void masuk(){
 
     // Variabel pilihan untuk pilihan user apakah ingin mendaftar atau keluar
