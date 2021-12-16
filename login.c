@@ -1,3 +1,11 @@
+
+
+#include "variable.h"
+#include "function.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /***********************************************************|
 |                    LOGIN & REGISTRASI                     |
 |TANGGAL PEMBUATAN : 7 DESEMBER 2021                        |
@@ -20,16 +28,6 @@
 |            value usrname yang ada di login agar dapat     |
 |            melakukan strcmp di fungsi lain (infouser())   |
 ************************************************************/
-
-#include "variable.h"
-#include "function.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-//define buffer_size ini untuk mendeklarasikan banyak/jumlah buffer max pada file
-#define BUFFER_SIZE 1000
-
 void daftar(){
     // Membuat pointer regis untuk file "dataLog.txt"
     FILE *registrasi;

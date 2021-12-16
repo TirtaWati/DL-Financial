@@ -2,7 +2,8 @@
 #ifndef __VARIABLE_H__
 #define __VARIABLE_H__
 #include <time.h>
-
+//define buffer_size ini untuk mendeklarasikan banyak/jumlah buffer max pada file
+#define BUFFER_SIZE 1000
 
 // Dekalarasi variable global yang di gunakan pada program catatan keuangan ini:
 int ktgripemasukan;                   //variable ktgripemasukan    => berfungsi untuk menyimpan yang dimasukkan oleh user pada pemilihan kategori pemasukan 

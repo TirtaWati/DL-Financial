@@ -1,25 +1,3 @@
-/*************************************************************************|
-|*********************      DISPLAY INFO AKUN      ***********************|
-|=========================================================================|
-|TANGGAL PEMBUATAN : 14 DESEMBER 2021                       			  |
-|OLEH : DWI TIRTA WATI                                      			  |
-|DESKRIPSI : Membuat logngsi infouser() untuk menampilkan data-data user  |
-|REVISI : 0                                                 			  |
-|*************************************************************************/
-
-/*************************************************************************|
-|*********************      DISPLAY INFO AKUN      ***********************|
-|=========================================================================|
-|TANGGAL PEMBUATAN : 14 DESEMBER 2021                       			  |
-|OLEH : DWI TIRTA WATI                                      			  |
-|DESKRIPSI : Membuat logngsi infouser untuk menampilkan data-data user    |
-|            setelah menu home pilihan 5````````````````````````````````  |
-|REVISI : 1                                                 			  |
-|DESKRIPSI : membuat file logrecord yang ada pada logngsi login termuat di|
-|            logngsi ini agar dapat memanggil data user pada dataLog.txt  | 
-|*************************************************************************/
-
-
 #include "variable.h"
 #include "structure.h"
 #include "function.h"
@@ -49,6 +27,28 @@ void error_alert(){
     printf   ("\n\n\t\t\t\t\t||            Pilihan Tidak Ada!!!           || \n");
     printf   ("\t\t\t\t\t||       Silahkan Pilih Pilihan yang Ada     || \n");
 }
+
+
+/*************************************************************************|
+|*********************      DISPLAY INFO AKUN      ***********************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 13 DESEMBER 2021                       			  |
+|OLEH : DWI TIRTA WATI                                      			  |
+|DESKRIPSI : Membuat fungsi infouser() untuk menampilkan data-data user   |
+|REVISI : 0                                                 			  |
+|*************************************************************************/
+
+/*************************************************************************|
+|*********************      DISPLAY INFO AKUN      ***********************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 14 DESEMBER 2021                       			  |
+|OLEH : DWI TIRTA WATI                                      			  |
+|DESKRIPSI : Membuat fungsi infouser untuk menampilkan data-data user     |
+|            setelah menu home pilihan 5								  |
+|REVISI : 1                                                 			  |
+|DESKRIPSI : membuat file logrecord yang ada pada logngsi login termuat di|
+|            fungsi ini agar dapat memanggil data user pada dataLog.txt   | 
+|*************************************************************************/
 
 void infouser (void){
     // penggunaan file handling pada program, mendeklarasikan pointer
