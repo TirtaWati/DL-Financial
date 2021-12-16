@@ -4,9 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//define buffer_size ini untuk mendeklarasikan banyak/jumlah buffer max pada file
-#define BUFFER_SIZE 1000
-
 void header (void){
     system ("clear");
 	printf  ("\n\n\t\t\t\t\t=============================================\n");
