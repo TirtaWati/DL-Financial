@@ -4,6 +4,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//=======================================================================//
+//************  Fungsi Untuk Menampilkan Tampilan Awal   ****************//
+//=======================================================================//
+// Tgl  	  : 07-12-2021                                           //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         //
+// Revisi	  : 0					                 //
+// Nama Fungsi    : header                                               //
+// Deskripsi      : Menampilkan sebuah tampilan awal saat program        //
+//		    dijalankan                                           //
+//=======================================================================//
 void header (void){
     system ("clear");
 	printf  ("\n\n\t\t\t\t\t=============================================\n");
