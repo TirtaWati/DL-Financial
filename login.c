@@ -1,10 +1,20 @@
-
-
 #include "variable.h"
 #include "function.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+
+//=======================================================================//
+//************  Fungsi Untuk Menampilkan Halaman Utama   ****************//
+//=======================================================================//
+// Tgl  	  : 07-12-2021                                   	 //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022               //
+// Revisi	  : 0					                 //
+// Nama Fungsi    : daftar                                               //
+// Deskripsi      : Membuat Fungsi untuk melakukan registrasi yang akan  //
+//		    akan dimasukkan oleh user.				 //
+//=======================================================================//
 
 /*************************************************************************|
 |**************************     REGISTRASI    ****************************|
@@ -55,6 +65,17 @@ void daftar(){
     // Memanggil fungsi masuk()
     masuk();
 }
+
+//=======================================================================//
+//************  Fungsi Untuk Menampilkan Halaman Utama   ****************//
+//=======================================================================//
+// Tgl  	  : 07-12-2021                                   	 //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022               //
+// Revisi	  : 0					                 //
+// Nama Fungsi    : masuk                                                //
+// Deskripsi      : Membuat Fungsi untuk melakukan Log In yang akan      //
+//		    akan dimasukkan oleh user.				 //
+//=======================================================================//
 
 /*************************************************************************|
 |***************************    LOGIN     ********************************|
