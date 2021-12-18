@@ -77,6 +77,16 @@ void home(){
     }
 }
 
+//=======================================================================//
+//************    Fungsi Untuk Menampilkan Menu Masuk    ****************//
+//=======================================================================//
+// Tgl  	  : 07-12-2021                                   	         //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022		             //
+// Revisi	  : 0					                                     //
+// Nama Fungsi: menu_masuk                                               //
+// Deskripsi  : Meminta user untuk memilih salah satu kategori menu      //
+//		        masuk yang ingin dijalankan sesuai dengan kebutuhan user //
+//=======================================================================//
 void menu_masuk(){
     int pilihanmasuk;
 
