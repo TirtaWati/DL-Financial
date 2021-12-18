@@ -10,7 +10,7 @@
 // Revisi	  : 0					                                     //
 // Nama Fungsi: home                                                     //
 // Deskripsi  : Meminta user untuk memilih salah satu kategori yang      //
-//		    ingin dijalankan sesuai dengan kebutuhan user.               //
+//		        ingin dijalankan sesuai dengan kebutuhan user.           //
 //=======================================================================//
 
 /*************************************************************************|
