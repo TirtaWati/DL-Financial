@@ -8,8 +8,8 @@
 // Tgl  	  : 14-12-2021                                   	         //
 // Oleh		  : Leony Mona Putri Sihaloho - 2105551022		             //
 // Revisi	  : 0					                                     //
-// Nama Fungsi    : home                                                 //
-// Deskripsi      : Meminta user untuk memilih salah satu kategori yang  //
+// Nama Fungsi: home                                                     //
+// Deskripsi  : Meminta user untuk memilih salah satu kategori yang      //
 //		    ingin dijalankan sesuai dengan kebutuhan user.               //
 //=======================================================================//
 
