@@ -2,12 +2,11 @@
 #define __FUNCTION_H__
 #include "structure.h"
 //Deklarasi fungsi-fungsi yang digunakan pada program catatan keuangan ini:
-int pemasukan ();                                    /* Merupakan fungsi yang digunakan untuk menampilkan dan menyimpan semua kategori,
+void pemasukan ();                                    /* Merupakan fungsi yang digunakan untuk menampilkan dan menyimpan semua kategori,
                                                         dan inputan pemasukan saldo user. */
-int pengeluaran ();                                  //-->file "input.c"
 
-int transaksi ();                                    /* Merupakan fungsi yang digunakan untuk menampilkan dan menyimpan semua kategori,
-                                                        dan inputan transaksi(pengeluaran) user. */
+int pengeluaran ();                                  //-->file "transaksi.c"
+
                                                         
 void header ();					     /* Merupakan fungsi yang digunakan untuk menampilkan Header progam */
 
@@ -23,9 +22,6 @@ void menu_masuk();                                   /* Merupakan fungsi yang di
 
 void home();					     /* Merupakan fungsi yang digunakan untuk menampilkan halaman utama atau home */
 
-void email_pw();                                     /* Merupakan fungsi yang digunakan untuk meminta user untuk menginput Email dan Password
-                                                        yang di gunakan untuk Masuk ke dalam program */
-
 void record(User u1, char file[]);                  
 
 void error_alert();                                  /* Merupakan fungsi yang digunakan untuk menampilan pemberitahuan ketika user menginputkan
@@ -33,5 +29,5 @@ void error_alert();                                  /* Merupakan fungsi yang di
 
 void infouser (void);                                  //-->file "display.c"
 
-void target ();
+void laporan ();                                        //--> file "display.c"
 #endif
