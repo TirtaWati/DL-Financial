@@ -24,19 +24,29 @@
 |            switch case 5, fungsi home()                                 |
 **************************************************************************/
 
+/*************************************************************************|
+|*************   Fungsi Untuk Menampilkan Halaman Utama   ****************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 17 DESEMBER 2021                                     |
+|OLEH : DWI TIRTA WATI                                                    |
+|DESKRIPSI : REVISI FUNGSI HOME() PADA PROGRAM                            |
+|REVISI : 2                                                               |
+|DESKRIPSI : Menghapus pilihan "tansaksi" dan "target" pada halaman utama |
+|            fungsi home()                                                |
+**************************************************************************/
+
 void home(){
     pilih:
     printf ("\t\t\t\t\t|================================================|\n");
-    printf ("\t\t\t\t\t|                   HALAMAN UTAMA                |\n");
+    printf ("\t\t\t\t\t|                 HALAMAN UTAMA                  |\n");
     printf ("\t\t\t\t\t|================================================|\n");
     printf ("\t\t\t\t\t|   No  |    Pilihan Menu                        |\n");
     printf ("\t\t\t\t\t|-------|----------------------------------------|\n");
     printf ("\t\t\t\t\t|   1   |    Pemasukan                           |\n");
     printf ("\t\t\t\t\t|   2   |    Pengeluaran                         |\n");
-    printf ("\t\t\t\t\t|   3   |    Transaksi                           |\n");
-    printf ("\t\t\t\t\t|   4   |    Target                              |\n");
-    printf ("\t\t\t\t\t|   5   |    INFO AKUN                           |\n");
-    printf ("\t\t\t\t\t|   6   |    EXIT                                |\n");
+    printf ("\t\t\t\t\t|   3   |    Laporan Transaksi                   |\n");
+    printf ("\t\t\t\t\t|   4   |    INFO AKUN                           |\n");
+    printf ("\t\t\t\t\t|   5   |    EXIT                                |\n");
     printf ("\t\t\t\t\t|================================================|\n"); 
     printf ("\t\t\t\t\t|================================================|\n");
     printf ("\n\t\t\t\t\t Input Pilihan Anda = ");
@@ -54,19 +64,15 @@ void home(){
         case 2:
             pengeluaran ();
             break;
-        //pada case 3, program akan menampilkan menu transaksi dan user akan diminta untuk memilih untuk transaksi yang di lakukan oleh user.
-        // case 3:
-        //     transaksi ();
-        //     break;
-        // //pada case 4, program akan menampilkan menu target yang di lakukan oleh user.
-        case 4:
-            target ();
+        // pada case 3, program akan menampilkan menu laporan dari pemasukan serta pengeluaran user
+        case 3:
+            laporan ();
             break;
         //case 4 masuk ke fungsi infouser()--> file "display.c"
-        case 5:
+        case 4:
             infouser();
             break;
-        case 6:
+        case 5:
             exit (0);
             break;    
         default:
