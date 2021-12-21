@@ -8,12 +8,12 @@
 //=======================================================================//
 //***********************      REGISTRASI     ***************************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                   	 //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022               //
-// Revisi	  : 0					                 //
+// Tgl  	  : 07-12-2021                                   	         //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022                   //
+// Revisi	  : 0					                                     //
 // Nama Fungsi    : daftar                                               //
 // Deskripsi      : Membuat Fungsi untuk melakukan registrasi yang akan  //
-//		    akan dimasukkan oleh user.				 //
+//		            akan dimasukkan oleh user.	            			 //
 //=======================================================================//
 
 /*************************************************************************|
@@ -23,7 +23,7 @@
 |OLEH : DWI TIRTA WATI                                                    |
 |DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN REGISTRASI PENGGUNA            |
 |REVISI : 1                                                               |
-|DESKRIPSI : Membuat dataLog.txt menyimpan tipa data pada 1 line, dan     |
+|DESKRIPSI : Membuat dataLog.txt menyimpan tiap data pada 1 line, dan     |
 |            menambahkan difine untuk membaca seluruh data di dataLog.txt |
 **************************************************************************/
 
@@ -56,9 +56,10 @@ void daftar(){
     printf("\t\t\t\tPassword : ");
     scanf ("%s", u.password);
 
-    // Menuliskan nama yang diinput oleh pengguna kedalam file "dataLog.txt"
+    // Menuliskan data yang diinput oleh pengguna kedalam file "dataLog.txt"
     fwrite(&u,sizeof(u),1,registrasi);
-    fprintf(registrasi, "\n");          //print new line agar data lain tidak berada di satu baris yang sama
+    //print new line agar data lain tidak berada di satu baris yang sama
+    fprintf(registrasi, "\n");               
     fclose(registrasi);
     getchar();
     system ("clear");
@@ -69,12 +70,12 @@ void daftar(){
 //=======================================================================//
 //*************************       LOGIN     *****************************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                   	 //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022               //
-// Revisi	  : 0					                 //
+// Tgl  	  : 07-12-2021                                   	         //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022                   //
+// Revisi	  : 0					                                     //
 // Nama Fungsi    : masuk                                                //
 // Deskripsi      : Membuat Fungsi untuk melakukan Log In yang akan      //
-//		    akan dimasukkan oleh user.				 //
+//		            akan dimasukkan oleh user.				             //
 //=======================================================================//
 
 /*************************************************************************|
@@ -84,8 +85,8 @@ void daftar(){
 |OLEH : DWI TIRTA WATI                                                    |
 |DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN  lOGIN PENGGUNA                |
 |REVISI : 2                                                               |
-|DESKRIPSI : menambahkan file logrecord untuk menyimpan value usrname yang|
-|            ada di login agar dapat melakukan strcmp di fungsi lain      |
+|DESKRIPSI : menambahkan file logrecord untuk menyimpan value username    |
+|            yang ada di login agar dapat melakukan strcmp di fungsi lain |
 **************************************************************************/
 void masuk(){
 
@@ -100,7 +101,7 @@ void masuk(){
         fputs ("Tidak terdapat FILE!!\n", stderr);
         daftar();
     }
-    record = fopen("logrecord.txt", "w");           /* pointer record digunakan untuk membuka file loglog.txt dengan mode w 
+    record = fopen("logrecord.txt", "w");           /* pointer record digunakan untuk membuka file logrecord.txt dengan mode w 
                                                      (dimana data yang tersimpan akan terus berganti setiap kali login dilakukan)*/
 
     // Arahan untuk LOGIN
@@ -115,22 +116,22 @@ void masuk(){
     printf ("\t\t\t\t\t--------------------\n");
     system ("clear");
     
-    //value usrname ditulis dan disimpan pada file logrecord
+    //value username ditulis dan disimpan pada file logrecord
     fwrite(&username, sizeof(username), 1, record);       
 
     //pengecekan username yang dimasukan apakah valid dengan dataLog.txt atau tidak
-    while(fgets(&u, BUFFER_SIZE, log)){              //loop while, semua yang data dalam dataLog.txt dibaca 
+    while(fgets(&u, BUFFER_SIZE, log)){              // loop while, semua yang data dalam dataLog.txt dibaca 
 
         /*  Mengkomparasi username serta password yang diinput pengguna kedalam fungsi
             masuk() dengan username serta password yang sudah terdaftar */
-        if(strcmp(&username, &u.username) == 0 && strcmp(&password, &u.password) == 0){      //membandingkan apakah username dan password valid
+        if(strcmp(&username, &u.username) == 0 && strcmp(&password, &u.password) == 0){      // membandingkan apakah username dan password valid
             system("clear");
             printf  ("\t\t\t\t\t Selamat Datang %s!!\n", &u.nama);
             home();
         }
-        else if(strcmp(&username, &u.username)== 0 && strcmp(&password, &u.password) != 0 ){ //membandingkan apakah pass yang diinputkan salah
+        else if(strcmp(&username, &u.username)== 0 && strcmp(&password, &u.password) != 0 ){ // membandingkan apakah pass yang diinputkan salah
             system("clear");
-			printf ("\n\n\t\t\t\t\t===============================\n");                      //kondisi kedua maka login gagal (karena pass salah)
+			printf ("\n\n\t\t\t\t\t===============================\n");                      // kondisi kedua maka login gagal (karena pass salah)
 			printf ("\t\t\t\t\tPassword yang Anda Masukan Salah!\n");
 			printf ("\t\t\t\t\t===============================\n");
             //instruksi apakah user ingin melakukan login ulang
@@ -142,8 +143,8 @@ void masuk(){
 				exit(0);
 			}
         }
-        // selain dua kondisi diatas maka sistem mengeluarkan printf dibawah dan keluar dari program
-        //  akun tidak terdaftar maka akan diberikan pilihan untuk mendaftar atau keluar dari program
+        /* selain dua kondisi diatas maka sistem mengeluarkan printf dibawah dan keluar dari program
+        akun tidak terdaftar maka akan diberikan pilihan untuk mendaftar atau keluar dari program*/
         else {           
             system("clear");
             printf ("\n\n\t\t\t\t\t=============================================\n");
