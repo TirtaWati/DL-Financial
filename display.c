@@ -49,23 +49,35 @@ void error_alert(){
 /*************************************************************************|
 |*********************      DISPLAY INFO AKUN      ***********************|
 |=========================================================================|
-|TANGGAL PEMBUATAN : 13 DESEMBER 2021                       			  |
-|OLEH : DWI TIRTA WATI                                      			  |
+|TANGGAL PEMBUATAN : 13 DESEMBER 2021                       		  |
+|OLEH : DWI TIRTA WATI                                      		  |
 |DESKRIPSI : Membuat fungsi infouser() untuk menampilkan data-data user   |
-|REVISI : 0                                                 			  |
+|REVISI : 0                                                 		  |
 |*************************************************************************/
 
 /*************************************************************************|
 |*********************      DISPLAY INFO AKUN      ***********************|
 |=========================================================================|
-|TANGGAL PEMBUATAN : 14 DESEMBER 2021                       			  |
-|OLEH : DWI TIRTA WATI                                      			  |
+|TANGGAL PEMBUATAN : 14 DESEMBER 2021                       		  |
+|OLEH : DWI TIRTA WATI                                      		  |
 |DESKRIPSI : Membuat fungsi infouser untuk menampilkan data-data user     |
-|            setelah menu home pilihan 5								  |
-|REVISI : 1                                                 			  |
+|            setelah menu home pilihan 5				  |
+|REVISI : 1                                                 		  |
 |DESKRIPSI : membuat file logrecord yang ada pada logngsi login termuat di|
 |            fungsi ini agar dapat memanggil data user pada dataLog.txt   | 
 |*************************************************************************/
+
+//=======================================================================//
+//********************      DISPLAY INFO AKUN      **********************//
+//=======================================================================//
+// Tgl  	  : 21-12-2021                                           //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	      	 //
+// Revisi	  : 2		  					 //
+// Nama Fungsi    : infouser                                             //
+// Deskripsi      : Menambahkan info user yaitu username dan password    //
+//		    sesuai dengan account yang sedang dijalankan. Dan    //
+//		    memanggil fungsi home() pada fungsi infouser         //
+//=======================================================================//
 
 void infouser (void){
     // penggunaan file handling pada program, mendeklarasikan pointer
@@ -82,24 +94,27 @@ void infouser (void){
 			printf  ("\t\t\t\t\t==========================================\n");	
 			printf  ("\t\t\t\t\t              ACCOUNT INFO\n");
 			printf  ("\t\t\t\t\t------------------------------------------\n");
-			printf  ("\t\t\t\t\t\t  NAMA : %s\n", &u.nama);
-			printf  ("\t\t\t\t\t\t  EMAIL: %s\n", &u.email);
-			printf  ("\t\t\t\t\t\t  SAKU : %2.f\n", u.saku);
+			printf  ("\t\t\t\t\t\t  NAMA     : %s\n", &u.nama);
+			printf  ("\t\t\t\t\t\t  EMAIL    : %s\n", &u.email);
+			printf  ("\t\t\t\t\t\t  USERNAME : %s\n", &u.username);
+			printf  ("\t\t\t\t\t\t  PASSWORD : %s\n", &u.password);
+			printf  ("\t\t\t\t\t\t  SAKU     : %2.f\n", u.saku);
 			printf  ("\t\t\t\t\t==========================================\n");
 		}
 	}
 	fclose(log);		/*menutup kedua file dataLog.txt dan logrecord.txt*/
 	fclose(record);
+	home();
 }
 
 /*************************************************************************|
 |******************      DISPLAY LAPORAN TRANSAKSI    ********************|
 |=========================================================================|
-|TANGGAL PEMBUATAN : 20 DESEMBER 2021                       			  |
-|OLEH : DWI TIRTA WATI                                      			  |
+|TANGGAL PEMBUATAN : 20 DESEMBER 2021                       		  |
+|OLEH : DWI TIRTA WATI                                      		  |
 |DESKRIPSI : Membuat fungsi laporan() untuk menampilkan transaksi yang    |
-|			 dilakukan oleh user										  |
-|REVISI : 0                                                 			  |
+|			 dilakukan oleh user				  |
+|REVISI : 0                                                 		  |
 |*************************************************************************/
 
 void laporan (){
@@ -119,9 +134,9 @@ void laporan (){
 			printf  ("\t\t\t\t\t  NAMA : %s\n", &u.nama);
 			printf  ("\t\t\t\t\t  SAKU : %2.f\n", u.saku);
 			printf  ("\t\t\t\t\t---------------------------------------------------\n");
-			printf  ("\t\t\t\t\t\t  PEMASUKAN : %2.f\n", u.in.pemasukan);
+			printf  ("\t\t\t\t\t\t  PEMASUKAN            : %2.f\n", u.in.pemasukan);
 			printf  ("\t\t\t\t\t\t  KATEGORI PEMASUKAN   : %s\n\n", u.in.kategori);
-			printf  ("\t\t\t\t\t\t  PENGELUARAN : %2.f\n", u.out.pengeluaran);
+			printf  ("\t\t\t\t\t\t  PENGELUARAN          : %2.f\n", u.out.pengeluaran);
 			printf  ("\t\t\t\t\t\t  KATEGORI PENGELUARAN : %s\n", u.out.kategori);
 			printf  ("\t\t\t\t\t===================================================\n");
 		}
@@ -129,4 +144,5 @@ void laporan (){
 	}
 	fclose(data);		/*menutup kedua file dataLog.txt dan logrecord.txt*/
 	fclose(record);
+	home();
 }
