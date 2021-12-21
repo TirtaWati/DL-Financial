@@ -40,19 +40,19 @@
 |            setelah data berhasil diinputkan dan masuk ke menu home      |
 |*************************************************************************/
 void pemasukan (){
-    int found = 0;                  //variable found untuk menunjukan sistem bahwa data akan dimasukan sesuai dengan baris dari username yang dituju
+    int found = 0;                                      //variable found untuk menunjukan sistem bahwa data akan dimasukan sesuai dengan baris dari username yang dituju
     
     // penggunaan file handling pada program, mendeklarasikan pointer
     FILE *data, *record, *temp; 
 
-    data = fopen("dataLog.txt", "r");       // pointer data digunakan untuk membuka file dataLog.txt dengan mode read 
-    record = fopen("logrecord.txt", "r");   // pointer record digunakan untuk membuka file logrecord.txt dengan mode read
-    temp = fopen("temp.txt", "w");          // pointer temp digunakan untuk membuka file temp.txt dengan mode write
+    data = fopen("dataLog.txt", "r");                   // pointer data digunakan untuk membuka file dataLog.txt dengan mode read 
+    record = fopen("logrecord.txt", "r");               // pointer record digunakan untuk membuka file logrecord.txt dengan mode read
+    temp = fopen("temp.txt", "w");                      // pointer temp digunakan untuk membuka file temp.txt dengan mode write
 
-    while (fgets(&u, BUFFER_SIZE, data))    //membaca keseluruhan isi dari dataLog.txt
+    while (fgets(&u, BUFFER_SIZE, data))                // membaca keseluruhan isi dari dataLog.txt
     {
-          if(strcmp(username, u.username) == 0){    //membandingkan apakah username logrecord dan username dataLog.txt sama
-            found = 1;                      // memberi nilai pada varible found untuk menyatakan bahwa baris data yang dituju ada 
+          if(strcmp(username, u.username) == 0){        // membandingkan apakah username logrecord dan username dataLog.txt sama
+            found = 1;                                  // memberi nilai pada varible found untuk menyatakan bahwa baris data yang dituju ada 
             // tampilan penginputan pemasukan dan ketegori pemasukan
             printf ("\n\n\t\t\t\t\t================================\n");
             printf ("\t\t\t\t\t    Pemasukan Anda Hari ini\n");
@@ -62,15 +62,15 @@ void pemasukan (){
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Kategori  : ");
             scanf  ("%s", &u.in.kategori);
-            u.saku += u.in.pemasukan;               //menjumlahkan pemasukan ke jumlah dari u.saku
+            u.saku += u.in.pemasukan;           //menjumlahkan pemasukan ke jumlah dari u.saku
           }
-          fwrite(&u, sizeof(u), 1, temp);           //memasukan data ke file temp.txt (data sementara)
+          fwrite(&u, sizeof(u), 1, temp);       //memasukan data ke file temp.txt (data sementara)
     }
-    fclose(data);       //menutup file dataLog.txt, logrecord.txt, dan temp.txt
+    fclose(data);                               //menutup file dataLog.txt, logrecord.txt, dan temp.txt
     fclose(record);
     fclose(temp);
 
-    if(found){         //ketika found = 1 maka program dibawahnya dijalankan
+    if(found){                                  // ketika found = 1 maka program dibawahnya dijalankan
         data = fopen("dataLog.txt", "w");       // pointer data digunakan untuk membuka file dataLog.txt dengan mode write 
         temp = fopen("temp.txt", "r");          // pointer record digunakan untuk membuka file temp.txt dengan mode read
         
@@ -79,7 +79,7 @@ void pemasukan (){
             fprintf(data, "\n");
         }
 
-        fclose(data);   //menutup file dataLog.txt, logrecord.txt, dan temp.txt
+        fclose(data);                           // menutup file dataLog.txt, logrecord.txt, dan temp.txt
         fclose(temp);
 
         // tampilan ketika data berhasil diinputkan dan kembali ke menu home
@@ -92,7 +92,7 @@ void pemasukan (){
         getchar();
     }
     system("clear");
-    home();
+    home();                                     // memanggil fungsi home()
 }
 
 /*************************************************************************|
@@ -151,25 +151,25 @@ int pengeluaran (){
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Kategori    : ");
             scanf  ("%s", &u.out.kategori);
-            u.saku -= u.out.pengeluaran;
+            u.saku -= u.out.pengeluaran;        // mengurangi jumlah dari u.saku dengan total pengeluaran
           }
-          fwrite(&u, sizeof(u), 1, temp);       //memasukan data ke file temp.txt (data sementara)
+          fwrite(&u, sizeof(u), 1, temp);       // memasukan data ke file temp.txt (data sementara)
           
     }
-    fclose(data);           //menutup file dataLog.txt, logrecord.txt, dan temp.txt
+    fclose(data);                               // menutup file dataLog.txt, logrecord.txt, dan temp.txt
     fclose(record);
     fclose(temp);
 
-    if(found){      //ketika found = 1 maka program dibawahnya dijalankan
-        data = fopen("dataLog.txt", "w");   // pointer data digunakan untuk membuka file dataLog.txt dengan mode write 
-        temp = fopen("temp.txt", "r");      // pointer record digunakan untuk membuka file temp.txt dengan mode read
+    if(found){                                  // ketika found = 1 maka program dibawahnya dijalankan
+        data = fopen("dataLog.txt", "w");       // pointer data digunakan untuk membuka file dataLog.txt dengan mode write 
+        temp = fopen("temp.txt", "r");          // pointer record digunakan untuk membuka file temp.txt dengan mode read
         
         while(fread(&u, sizeof(u), 1, temp)){   // membaca data yang ada pada file temp.txt
             fwrite(&u, sizeof(u), 1, data);     // memasukan data yang ada di temp.txt ke dalam dataLog.txt
             fprintf(data, "\n");
         }
 
-        fclose(data);   //menutup file dataLog.txt, logrecord.txt, dan temp.txt
+        fclose(data);                           // menutup file dataLog.txt, logrecord.txt, dan temp.txt
         fclose(temp);
         
         // tampilan ketika data berhasil diinputkan dan kembali ke menu home
@@ -182,5 +182,5 @@ int pengeluaran (){
         getchar();
     }
     system("clear");
-    home();
+    home();                                     // memanggil fungsi home()
 }
