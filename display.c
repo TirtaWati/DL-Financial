@@ -30,6 +30,16 @@ void header (void){
     getchar();
 }
 
+//=======================================================================//
+//***********************      ERROR ALERT     **************************//
+//=======================================================================//
+// Tgl  	  : 07-12-2021                                           //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         //
+// Revisi	  : 0					                 //
+// Nama Fungsi    : error_alert                                          //
+// Deskripsi      : Menampilkan pemberitahuan ketika user menginputkan   //
+//		    pilihan yang salah                                   //
+//=======================================================================//
 void error_alert(){
     printf   ("\n\n\t\t\t\t\t||            Pilihan Tidak Ada!!!           || \n");
     printf   ("\t\t\t\t\t||       Silahkan Pilih Pilihan yang Ada     || \n");
