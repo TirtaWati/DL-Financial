@@ -7,12 +7,12 @@
 //=======================================================================//
 //************  Fungsi Untuk Menampilkan Tampilan Awal   ****************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                          	 //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         	 //
-// Revisi	  : 0					                					 //
+// Tgl  	  : 07-12-2021                                           //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	      	 //
+// Revisi	  : 0		  					 //
 // Nama Fungsi    : header                                               //
 // Deskripsi      : Menampilkan sebuah tampilan awal saat program        //
-//		   		 	dijalankan                                           //
+//		   		 	dijalankan                       //
 //=======================================================================//
 void header (void){
     system ("clear");
@@ -33,12 +33,12 @@ void header (void){
 //=======================================================================//
 //***********************      ERROR ALERT     **************************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                         	     //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	             //
-// Revisi	  : 0					                 					 //
+// Tgl  	  : 07-12-2021                                           //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         //
+// Revisi	  : 0		      					 //
 // Nama Fungsi    : error_alert                                          //
 // Deskripsi      : Menampilkan pemberitahuan ketika user menginputkan   //
-//		    		pilihan yang salah                                   //
+//		    		pilihan yang salah                       //
 //=======================================================================//
 void error_alert(){
     printf   ("\n\n\t\t\t\t\t||            Pilihan Tidak Ada!!!           || \n");
