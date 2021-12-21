@@ -97,7 +97,7 @@ void infouser (void){
 			printf  ("\t\t\t\t\t\t      EMAIL    : %s\n", &u.email);
 			printf  ("\t\t\t\t\t\t      USERNAME : %s\n", &u.username);
 			printf  ("\t\t\t\t\t\t      PASSWORD : %s\n", &u.password);
-			printf  ("\t\t\t\t\t\t      SAKU     : %2.f\n", u.saku);
+			printf  ("\t\t\t\t\t\t      SAKU     : Rp.%2.f\n", u.saku);
 			printf  ("\t\t\t\t\t    ==========================================\n\n");
 		}
 	}
