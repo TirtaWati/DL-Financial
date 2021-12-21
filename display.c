@@ -90,15 +90,15 @@ void infouser (void){
 		if(strcmp(username, u.username) == 0){		// membandingkan apakah username logrecord dan username dataLog.txt sama
 		    system("clear");
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan info user yang ada dan yang sesuai dengan username
-			printf  ("\t\t\t\t\t==========================================\n");	
-			printf  ("\t\t\t\t\t              ACCOUNT INFO\n");
-			printf  ("\t\t\t\t\t------------------------------------------\n");
-			printf  ("\t\t\t\t\t\t  NAMA     : %s\n", &u.nama);
-			printf  ("\t\t\t\t\t\t  EMAIL    : %s\n", &u.email);
-			printf  ("\t\t\t\t\t\t  USERNAME : %s\n", &u.username);
-			printf  ("\t\t\t\t\t\t  PASSWORD : %s\n", &u.password);
-			printf  ("\t\t\t\t\t\t  SAKU     : %2.f\n", u.saku);
-			printf  ("\t\t\t\t\t==========================================\n");
+			printf  ("\t\t\t\t\t   ==========================================\n");	
+			printf  ("\t\t\t\t\t                  ACCOUNT INFO\n");
+			printf  ("\t\t\t\t\t    ------------------------------------------\n");
+			printf  ("\t\t\t\t\t\t      NAMA     : %s\n", &u.nama);
+			printf  ("\t\t\t\t\t\t      EMAIL    : %s\n", &u.email);
+			printf  ("\t\t\t\t\t\t      USERNAME : %s\n", &u.username);
+			printf  ("\t\t\t\t\t\t      PASSWORD : %s\n", &u.password);
+			printf  ("\t\t\t\t\t\t      SAKU     : %2.f\n", u.saku);
+			printf  ("\t\t\t\t\t    ==========================================\n\n");
 		}
 	}
 	fclose(log);		/*menutup kedua file dataLog.txt dan logrecord.txt*/
@@ -137,7 +137,7 @@ void laporan (){
 			printf  ("\t\t\t\t\t\t  KATEGORI PEMASUKAN   : %s\n\n", u.in.kategori);
 			printf  ("\t\t\t\t\t\t  PENGELUARAN          : %2.f\n", u.out.pengeluaran);
 			printf  ("\t\t\t\t\t\t  KATEGORI PENGELUARAN : %s\n", u.out.kategori);
-			printf  ("\t\t\t\t\t===================================================\n");
+			printf  ("\t\t\t\t\t===================================================\n\n");
 		}
 		
 	}
