@@ -90,7 +90,7 @@ void infouser (void){
 		if(strcmp(username, u.username) == 0){		// membandingkan apakah username logrecord dan username dataLog.txt sama
 		    system("clear");
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan info user yang ada dan yang sesuai dengan username
-			printf  ("\t\t\t\t\t   ==========================================\n");	
+			printf  ("\t\t\t\t\t    ==========================================\n");	
 			printf  ("\t\t\t\t\t                  ACCOUNT INFO\n");
 			printf  ("\t\t\t\t\t    ------------------------------------------\n");
 			printf  ("\t\t\t\t\t\t      NAMA     : %s\n", &u.nama);
