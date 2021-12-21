@@ -7,12 +7,12 @@
 //=======================================================================//
 //************  Fungsi Untuk Menampilkan Tampilan Awal   ****************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                           //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         //
-// Revisi	  : 0					                 //
+// Tgl  	  : 07-12-2021                                          	 //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         	 //
+// Revisi	  : 0					                					 //
 // Nama Fungsi    : header                                               //
 // Deskripsi      : Menampilkan sebuah tampilan awal saat program        //
-//		    dijalankan                                           //
+//		   		 	dijalankan                                           //
 //=======================================================================//
 void header (void){
     system ("clear");
@@ -33,12 +33,12 @@ void header (void){
 //=======================================================================//
 //***********************      ERROR ALERT     **************************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                           //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         //
-// Revisi	  : 0					                 //
+// Tgl  	  : 07-12-2021                                         	     //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	             //
+// Revisi	  : 0					                 					 //
 // Nama Fungsi    : error_alert                                          //
 // Deskripsi      : Menampilkan pemberitahuan ketika user menginputkan   //
-//		    pilihan yang salah                                   //
+//		    		pilihan yang salah                                   //
 //=======================================================================//
 void error_alert(){
     printf   ("\n\n\t\t\t\t\t||            Pilihan Tidak Ada!!!           || \n");
@@ -70,13 +70,13 @@ void error_alert(){
 void infouser (void){
     // penggunaan file handling pada program, mendeklarasikan pointer
 	FILE *log, *record;
-	log = fopen("dataLog.txt", "r");		    // pointer log digunakan untuk membuka file dataLog.txt dengan mode read 
-	record = fopen("logrecord.txt", "r"); 		/* pointer record digunakan untuk membuka file logrecord.txt dengan mode w 
-                                		           (dimana data yang tersimpan akan terus berganti setiap kali login dilakukan)*/
+	log = fopen("dataLog.txt", "r");		    	// pointer log digunakan untuk membuka file dataLog.txt dengan mode read 
+	record = fopen("logrecord.txt", "r"); 			/* pointer record digunakan untuk membuka file logrecord.txt dengan mode w 
+                                		           	   (dimana data yang tersimpan akan terus berganti setiap kali login dilakukan)*/
 
 	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
-	while(fgets(&u, BUFFER_SIZE, log)){				//membaca keseluruhan isi dari dataLog.txt
-		if(strcmp(username, u.username) == 0){		//membandingkan apakah username logrecord dan username dataLog.txt sama
+	while(fgets(&u, BUFFER_SIZE, log)){				// membaca keseluruhan isi dari dataLog.txt
+		if(strcmp(username, u.username) == 0){		// membandingkan apakah username logrecord dan username dataLog.txt sama
 		    system("clear");
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan info user yang ada dan yang sesuai dengan username
 			printf  ("\t\t\t\t\t==========================================\n");	
@@ -109,8 +109,8 @@ void laporan (){
 	record = fopen("logrecord.txt", "r"); 		// pointer record digunakan untuk membuka file logrecord.txt dengan mode read
 
 	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
-	while(fgets(&u, BUFFER_SIZE, data)){		//membaca keseluruhan isi dari dataLog.txt
-		if(strcmp(username, u.username) == 0){	//membandingkan apakah username logrecord dan username dataLog.txt sama
+	while(fgets(&u, BUFFER_SIZE, data)){		// membaca keseluruhan isi dari dataLog.txt
+		if(strcmp(username, u.username) == 0){	// membandingkan apakah username logrecord dan username dataLog.txt sama
 			system("clear");
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan transaksi yang ada dan yang sesuai dengan username
 			printf  ("\t\t\t\t\t===================================================\n");	
