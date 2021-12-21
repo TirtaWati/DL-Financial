@@ -75,8 +75,7 @@ void error_alert(){
 // Revisi	  : 2		  					 //
 // Nama Fungsi    : infouser                                             //
 // Deskripsi      : Menambahkan info user yaitu username dan password    //
-//		    sesuai dengan account yang sedang dijalankan. Dan    //
-//		    memanggil fungsi home() pada fungsi infouser         //
+//		    sesuai dengan account yang sedang dijalankan.        //
 //=======================================================================//
 
 void infouser (void){
