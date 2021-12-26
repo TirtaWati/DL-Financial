@@ -24,17 +24,6 @@
 |            switch case 5, fungsi home()                                 |
 **************************************************************************/
 
-/*************************************************************************|
-|*************   Fungsi Untuk Menampilkan Halaman Utama   ****************|
-|=========================================================================|
-|TANGGAL PEMBUATAN : 17 DESEMBER 2021                                     |
-|OLEH : DWI TIRTA WATI                                                    |
-|DESKRIPSI : REVISI FUNGSI HOME() PADA PROGRAM                            |
-|REVISI : 2                                                               |
-|DESKRIPSI : Menghapus pilihan "tansaksi" dan "target" pada halaman utama |
-|            fungsi home()                                                |
-**************************************************************************/
-
 void home(){
     pilih:
     printf ("\t\t\t\t\t|================================================|\n");
@@ -129,3 +118,4 @@ void menu_masuk(){
         break;
     }
 }
+
