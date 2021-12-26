@@ -39,9 +39,22 @@
 |DESKRIPSI : menambahkan struct transaksi di dalam struct user, tampilan  |
 |            setelah data berhasil diinputkan dan masuk ke menu home      |
 |*************************************************************************/
+
+/*************************************************************************|
+|*********************       FUNGSI PEMASUKAN      ***********************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 26 DESEMBER 2021                       			  |
+|OLEH : DWI TIRTA WATI                                      			  |
+|DESKRIPSI : Revisi fungsi pemasukan(), untuk menginput pemasukan dan     |
+|            Kategori pemasukan user.                                     |
+|REVISI : 3                                                 			  |
+|DESKRIPSI : menghapus struct transaksi di dalam struct user, menjumlahkan|
+|            pemasukan lama dan baru agar yang tersimpan adalah total dari|
+|            pemasukan yang telah diinputkan                              |
+|*************************************************************************/
 void pemasukan (){
     int found = 0;                                      //variable found untuk menunjukan sistem bahwa data akan dimasukan sesuai dengan baris dari username yang dituju
-    
+    int i;
     // penggunaan file handling pada program, mendeklarasikan pointer
     FILE *data, *record, *temp; 
 
@@ -58,11 +71,12 @@ void pemasukan (){
             printf ("\t\t\t\t\t    Pemasukan Anda Hari ini\n");
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Pemasukan : ");
-            scanf  ("%f", &u.in.pemasukan);
+            scanf  ("%f", &u.t_pemasukan);
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Kategori  : ");
-            scanf  ("%s", &u.in.kategori);
-            u.saku += u.in.pemasukan;           //menjumlahkan pemasukan ke jumlah dari u.saku
+            scanf  ("%s", &u.kategori_in);
+            u.saku += u.t_pemasukan;           //menjumlahkan pemasukan dengan jumlah dari u.saku
+            u.pemasukan += u.t_pemasukan;      //menjumlahkan pemasukan baru dengan pemasukan sebelumnya 
           }
           fwrite(&u, sizeof(u), 1, temp);       //memasukan data ke file temp.txt (data sementara)
     }
@@ -129,6 +143,19 @@ void pemasukan (){
 |DESKRIPSI : menambahkan struct transaksi di dalam struct user, tampilan  |
 |            setelah data berhasil diinputkan dan masuk ke menu home      |
 |*************************************************************************/
+
+/*************************************************************************|
+|*********************       FUNGSI PEMASUKAN      ***********************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 26 DESEMBER 2021                       			  |
+|OLEH : DWI TIRTA WATI                                      			  |
+|DESKRIPSI : Revisi fungsi pemasukan(), untuk menginput pemasukan dan     |
+|            Kategori pemasukan user.                                     |
+|REVISI : 3                                                 			  |
+|DESKRIPSI : menjumlahkan pengeluaran lama dan baru agar yang tersimpan   |
+|            adalah total dari pengeluaran yang telah diinputkan          |
+|*************************************************************************/
+
 int pengeluaran (){
     int found = 0; //variable found untuk menunjukan sistem bahwa data akan dimasukan sesuai dengan baris dari username yang dituju
     
@@ -147,11 +174,12 @@ int pengeluaran (){
             printf ("\t\t\t\t\t    Pengeluaran Anda Hari ini\n");
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Pengeluaran : ");
-            scanf  ("%f", &u.out.pengeluaran);
+            scanf  ("%f", &u.t_pengeluaran);
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Kategori    : ");
-            scanf  ("%s", &u.out.kategori);
-            u.saku -= u.out.pengeluaran;        // mengurangi jumlah dari u.saku dengan total pengeluaran
+            scanf  ("%s", &u.kategori_out);
+            u.saku -= u.t_pengeluaran;        // mengurangi jumlah dari u.saku dengan total pengeluaran
+            u.pengeluaran += u.t_pengeluaran;
           }
           fwrite(&u, sizeof(u), 1, temp);       // memasukan data ke file temp.txt (data sementara)
           
