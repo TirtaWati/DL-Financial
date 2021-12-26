@@ -40,21 +40,27 @@ void daftar(){
     }
 
     // Arahan untuk menginput nama dan email baru
-    printf("\n\n\t\t\t\t Silahkan registrasi akun anda terlebih dahulu!\n\n");
+    printf  ("\t\t\t\t\t================================================\n");
+    printf  ("\t\t\t\t\t Silahkan registrasi akun anda terlebih dahulu! \n");
+    printf  ("\t\t\t\t\t------------------------------------------------\n");
     getchar();
-    printf("\t\t\t\tNama    : ");
-    gets(u.nama);
-    printf("\t\t\t\tEmail   : ");
-    scanf ("%s", u.email);
-    printf("\n\t\t\t\t\t Selamat Datang %s!\n", u.nama);
-    printf ("\t\t\t\t\tSilahkan input username (max 10)\n");
-    printf ("\t\t\t\t\tSilahkan input password (max 8)\n");
+    printf  ("\t\t\t\t\tNama    : ");
+    gets    (u.nama);
+    printf  ("\t\t\t\t\tEmail   : ");
+    scanf   ("%s", u.email);
 
+    system("clear");
+    printf  ("\n\t\t\t\t\t==========================================\n");
+    printf  ("\t\t\t\t\tSelamat Datang %s!\n", u.nama);
+    printf  ("\t\t\t\t\t------------------------------------------  \n");
+    printf  ("\t\t\t\t\t    Silahkan input username (max 10)        \n");
+    printf  ("\t\t\t\t\t    Silahkan input password (max 8)         \n");
+    printf  ("\t\t\t\t\t==========================================  \n");
     // Arahan untuk menginput username serta password baru
-    printf("\n\t\t\t\tUsername : ");
-    scanf ("%s", u.username);
-    printf("\t\t\t\tPassword : ");
-    scanf ("%s", u.password);
+    printf  ("\t\t\t\t\tUsername : ");
+    scanf   ("%s", u.username);
+    printf  ("\t\t\t\t\tPassword : ");
+    scanf   ("%s", u.password);
 
     // Menuliskan data yang diinput oleh pengguna kedalam file "dataLog.txt"
     fwrite(&u,sizeof(u),1,registrasi);
@@ -84,7 +90,7 @@ void daftar(){
 |TANGGAL PEMBUATAN : 7 DESEMBER 2021                                      |
 |OLEH : DWI TIRTA WATI                                                    |
 |DESKRIPSI : REVISI FUNGSI UNTUK MELAKUKAN  lOGIN PENGGUNA                |
-|REVISI : 2                                                               |
+|REVISI : 1                                                               |
 |DESKRIPSI : menambahkan file logrecord untuk menyimpan value username    |
 |            yang ada di login agar dapat melakukan strcmp di fungsi lain |
 **************************************************************************/
