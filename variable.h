@@ -6,9 +6,7 @@
 #define BUFFER_SIZE 1000
 
 // Dekalarasi variable global yang di gunakan pada program catatan keuangan ini:
-int ktgripemasukan;                   //variable ktgripemasukan    => berfungsi untuk menyimpan yang dimasukkan oleh user pada pemilihan kategori pemasukan 
-int ktgripengeluaran;                 //variable ktgripengeluaran  => berfungsi untuk menyimpan yang dimasukkan oleh user pada pemilihan kategori pengeluaran
-time_t curtime;                       //variavel curtime           => berfungsi untuk mengambil waktu dari sistem.            
+time_t waktuserver;                   //variavel curtime           => berfungsi untuk mengambil waktu dari sistem.            
 char namaFile[] = "dataLog.txt";      //assign namaFile (nF) agar menyimpan string "dataLog.txt"
 int pilihanmasuk;					  //variabel pilihanmasuk      => berfungsi untuk menyimpan pilihan yang dimasukan oleh user untuk di proses ke switch case pada pemilihan menu login
 int menuhome;						  //variabel pilihanmenu       => berfungsi untuk menyimpan pilihan yang dimasukan oleh user untuk di proses ke switch case pada Halaman Utama atau Home
