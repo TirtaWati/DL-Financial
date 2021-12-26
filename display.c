@@ -3,6 +3,7 @@
 #include "function.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 //=======================================================================//
 //************  Fungsi Untuk Menampilkan Tampilan Awal   ****************//
@@ -97,7 +98,7 @@ void infouser (void){
 			printf  ("\t\t\t\t\t\t      EMAIL    : %s\n", &u.email);
 			printf  ("\t\t\t\t\t\t      USERNAME : %s\n", &u.username);
 			printf  ("\t\t\t\t\t\t      PASSWORD : %s\n", &u.password);
-			printf  ("\t\t\t\t\t\t      SAKU     : Rp.%2.f\n", u.saku);
+			printf  ("\t\t\t\t\t\t      SAKU     : Rp%2.f\n", u.saku);
 			printf  ("\t\t\t\t\t    ==========================================\n\n");
 		}
 	}
@@ -116,11 +117,23 @@ void infouser (void){
 |REVISI : 0                                                 		  |
 |*************************************************************************/
 
+/*************************************************************************|
+|******************      DISPLAY LAPORAN TRANSAKSI   *********************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 26 DESEMBER 2021                                     |
+|OLEH : DWI TIRTA WATI                                                    |
+|DESKRIPSI : REVISI FUNGSI LAPORAN() UNTUK TAMPILAN LAPORAN TRANSAKSI     |
+|REVISI : 1                                                               |
+|DESKRIPSI : Menambahkan ctime untuk menampilakan waktu sistem saat		  |
+|            display laporan dipanggil                                    |
+**************************************************************************/
+
 void laporan (){
 	// penggunaan file handling pada program, mendeklarasikan pointer
 	FILE *data, *record;
 	data = fopen("dataLog.txt", "r");  			// pointer data digunakan untuk membuka file dataLog.txt dengan mode read 
 	record = fopen("logrecord.txt", "r"); 		// pointer record digunakan untuk membuka file logrecord.txt dengan mode read
+	time(&curtime);
 
 	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
 	while(fgets(&u, BUFFER_SIZE, data)){		// membaca keseluruhan isi dari dataLog.txt
@@ -129,14 +142,15 @@ void laporan (){
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan transaksi yang ada dan yang sesuai dengan username
 			printf  ("\t\t\t\t\t===================================================\n");	
 			printf  ("\t\t\t\t\t            LAPORAN TRANSAKSI HARI INI			   \n");
+			printf  ("\t\t\t\t\t%s ", ctime(&curtime));
 			printf  ("\t\t\t\t\t---------------------------------------------------\n");
 			printf  ("\t\t\t\t\t  NAMA : %s\n", &u.nama);
-			printf  ("\t\t\t\t\t  SAKU : %2.f\n", u.saku);
+			printf  ("\t\t\t\t\t  SAKU : Rp%2.f\n", u.saku);
 			printf  ("\t\t\t\t\t---------------------------------------------------\n");
-			printf  ("\t\t\t\t\t\t  PEMASUKAN            : %2.f\n", u.in.pemasukan);
-			printf  ("\t\t\t\t\t\t  KATEGORI PEMASUKAN   : %s\n\n", u.in.kategori);
-			printf  ("\t\t\t\t\t\t  PENGELUARAN          : %2.f\n", u.out.pengeluaran);
-			printf  ("\t\t\t\t\t\t  KATEGORI PENGELUARAN : %s\n", u.out.kategori);
+			printf  ("\t\t\t\t\t\t  TOTAL PEMASUKAN      : Rp%2.f\n", u.pemasukan);
+			printf  ("\t\t\t\t\t\t  KATEGORI PEMASUKAN   : %s\n\n", u.kategori_in);
+			printf  ("\t\t\t\t\t\t  TOTAL PENGELUARAN    : Rp%2.f\n", u.pengeluaran);
+			printf  ("\t\t\t\t\t\t  KATEGORI PENGELUARAN : %s\n", u.kategori_out);
 			printf  ("\t\t\t\t\t===================================================\n\n");
 		}
 		
@@ -145,3 +159,4 @@ void laporan (){
 	fclose(record);
 	home();
 }
+
