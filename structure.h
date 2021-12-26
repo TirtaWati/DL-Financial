@@ -8,16 +8,17 @@ typedef struct {
     char password[8];
     char email[30];
 	float saku;
-    struct transaksi
-    {
-        float pemasukan;
-        float pengeluaran;
-        char kategori[100];
-    }in, out;
-    
+    float pemasukan;
+    float pengeluaran;
+    float t_pemasukan;
+    float t_pengeluaran;
+    char kategori_in[20];
+    char kategori_out[20];
 }User;
+
 
 //Mendeklarasikan variabel u pada struct User
 User u;
+
 
 #endif 
