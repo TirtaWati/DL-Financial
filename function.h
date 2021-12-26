@@ -31,4 +31,5 @@ void error_alert();                                  /* Merupakan fungsi yang di
 void infouser (void);                                // fungsi untuk menampilkan info akun, berada di file "display.c"
 
 void laporan ();                                     // fungsi untuk menampilkan laporan transaksi user, berada di file "display.c"
+
 #endif
