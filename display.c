@@ -133,7 +133,7 @@ void laporan (){
 	FILE *data, *record;
 	data = fopen("dataLog.txt", "r");  			// pointer data digunakan untuk membuka file dataLog.txt dengan mode read 
 	record = fopen("logrecord.txt", "r"); 		// pointer record digunakan untuk membuka file logrecord.txt dengan mode read
-	time(&curtime);
+	time(&waktuserver);
 
 	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
 	while(fgets(&u, BUFFER_SIZE, data)){		// membaca keseluruhan isi dari dataLog.txt
@@ -142,7 +142,7 @@ void laporan (){
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan transaksi yang ada dan yang sesuai dengan username
 			printf  ("\t\t\t\t\t===================================================\n");	
 			printf  ("\t\t\t\t\t            LAPORAN TRANSAKSI HARI INI			   \n");
-			printf  ("\t\t\t\t\t%s ", ctime(&curtime));
+			printf  ("\t\t\t\t\t%s ", ctime(&waktuserver));
 			printf  ("\t\t\t\t\t---------------------------------------------------\n");
 			printf  ("\t\t\t\t\t  NAMA : %s\n", &u.nama);
 			printf  ("\t\t\t\t\t  SAKU : Rp%2.f\n", u.saku);
