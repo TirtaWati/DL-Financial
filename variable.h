@@ -12,4 +12,6 @@ int pilihanmasuk;					  //variabel pilihanmasuk      => berfungsi untuk menyimpa
 int menuhome;						  //variabel pilihanmenu       => berfungsi untuk menyimpan pilihan yang dimasukan oleh user untuk di proses ke switch case pada Halaman Utama atau Home
 char yn;                              //untuk menampung karakter input pada pilihan (Y|N) --> file "input.c (login())"
 char username[10], password[8];       //untuk menampung array of string username dan password pada login --> file "input.c" fungsi masuk()
+float t_pemasukan;
+float t_pengeluaran;
 #endif

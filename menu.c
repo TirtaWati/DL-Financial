@@ -35,7 +35,8 @@ void home(){
     printf ("\t\t\t\t\t|   2   |    Pengeluaran                         |\n");
     printf ("\t\t\t\t\t|   3   |    Laporan Transaksi                   |\n");
     printf ("\t\t\t\t\t|   4   |    INFO AKUN                           |\n");
-    printf ("\t\t\t\t\t|   5   |    EXIT                                |\n");
+    printf ("\t\t\t\t\t|   5   |    LOG OUT                             |\n");
+    printf ("\t\t\t\t\t|   6   |    EXIT                                |\n");
     printf ("\t\t\t\t\t|================================================|\n"); 
     printf ("\t\t\t\t\t|================================================|\n");
     printf ("\n\t\t\t\t\t Input Pilihan Anda = ");
@@ -61,9 +62,13 @@ void home(){
         case 4:
             infouser();
             break;
+        // case 5 program akan menampilkan menu login dan registrasi di awal
         case 5:
-            exit (0);
+            menu_masuk ();
             break;    
+        case 6:
+            exit (0);
+            break; 
         default:
             error_alert();
             //goto pilih; dimana syntax ini akan membawa user kembali ke menu pemilihan program untuk menginputkan pilihan yang benar, ini akan terus berulang hingga user menginputkan pilihan yang benar sesuai apa yang sudah ditampilkan pada menu pilihan.

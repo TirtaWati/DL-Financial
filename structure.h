@@ -10,8 +10,6 @@ typedef struct {
 	float saku;
     float pemasukan;
     float pengeluaran;
-    float t_pemasukan;
-    float t_pengeluaran;
     char kategori_in[20];
     char kategori_out[20];
 }User;

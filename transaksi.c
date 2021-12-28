@@ -54,7 +54,6 @@
 |*************************************************************************/
 void pemasukan (){
     int found = 0;                                      //variable found untuk menunjukan sistem bahwa data akan dimasukan sesuai dengan baris dari username yang dituju
-    int i;
     // penggunaan file handling pada program, mendeklarasikan pointer
     FILE *data, *record, *temp; 
 
@@ -71,12 +70,12 @@ void pemasukan (){
             printf ("\t\t\t\t\t    Pemasukan Anda Hari ini\n");
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Pemasukan : ");
-            scanf  ("%f", &u.t_pemasukan);
+            scanf  ("%f", &t_pemasukan);
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Kategori  : ");
             scanf  ("%s", &u.kategori_in);
-            u.saku += u.t_pemasukan;           //menjumlahkan pemasukan dengan jumlah dari u.saku
-            u.pemasukan += u.t_pemasukan;      //menjumlahkan pemasukan baru dengan pemasukan sebelumnya 
+            u.saku += t_pemasukan;           //menjumlahkan pemasukan dengan jumlah dari u.saku
+            u.pemasukan += t_pemasukan;      //menjumlahkan pemasukan baru dengan pemasukan sebelumnya 
           }
           fwrite(&u, sizeof(u), 1, temp);       //memasukan data ke file temp.txt (data sementara)
     }
@@ -103,6 +102,7 @@ void pemasukan (){
         printf  ("\t\t\t\t\t---------------------------------------------\n");
         printf  ("\t\t\t\t\t       Tekan ENTER  untuk melanjutkan....    \n");
         printf  ("\t\t\t\t\t=============================================\n");
+        getchar();
         getchar();
     }
     system("clear");
@@ -156,7 +156,7 @@ void pemasukan (){
 |            adalah total dari pengeluaran yang telah diinputkan          |
 |*************************************************************************/
 
-int pengeluaran (){
+void pengeluaran (){
     int found = 0; //variable found untuk menunjukan sistem bahwa data akan dimasukan sesuai dengan baris dari username yang dituju
     
     // penggunaan file handling pada program, mendeklarasikan pointer
@@ -174,12 +174,12 @@ int pengeluaran (){
             printf ("\t\t\t\t\t    Pengeluaran Anda Hari ini\n");
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Pengeluaran : ");
-            scanf  ("%f", &u.t_pengeluaran);
+            scanf  ("%f", &t_pengeluaran);
             printf ("\t\t\t\t\t--------------------------------\n");
             printf ("\t\t\t\t\t Kategori    : ");
             scanf  ("%s", &u.kategori_out);
-            u.saku -= u.t_pengeluaran;        // mengurangi jumlah dari u.saku dengan total pengeluaran
-            u.pengeluaran += u.t_pengeluaran;
+            u.saku -= t_pengeluaran;        // mengurangi jumlah dari u.saku dengan total pengeluaran
+            u.pengeluaran += t_pengeluaran;
           }
           fwrite(&u, sizeof(u), 1, temp);       // memasukan data ke file temp.txt (data sementara)
           
@@ -207,6 +207,7 @@ int pengeluaran (){
         printf  ("\t\t\t\t\t---------------------------------------------\n");
         printf  ("\t\t\t\t\t       Tekan ENTER  untuk melanjutkan....    \n");
         printf  ("\t\t\t\t\t=============================================\n");
+        getchar();
         getchar();
     }
     system("clear");

@@ -5,7 +5,7 @@
 void pemasukan ();                                   /* Merupakan fungsi yang digunakan untuk menampilkan dan menyimpan semua kategori,
                                                         dan inputan pemasukan saldo user. */
 
-int pengeluaran ();                                  /* fungsi untuk melakukan penginputan data pengeluaran dari user yang akan menyimpan 
+void pengeluaran ();                                  /* fungsi untuk melakukan penginputan data pengeluaran dari user yang akan menyimpan 
                                                         jumlah pengeluaran dan kategori sehingga mempengaruhi jumlah dari saku user -->"transaksi.c"*/
 
                                                         

@@ -96,9 +96,6 @@ void daftar(){
 **************************************************************************/
 void masuk(){
 
-    // Variabel pilihan untuk pilihan user apakah ingin mendaftar atau keluar
-    int pilihan;
-
     // Membuat pointer log untuk menunjuk pada file "dataLog.txt"
     FILE *log, *record;
     // Membuka file dengan mode "r"
