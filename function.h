@@ -32,4 +32,8 @@ void infouser (void);                                // fungsi untuk menampilkan
 
 void laporan ();                                     // fungsi untuk menampilkan laporan transaksi user, berada di file "display.c"
 
+void menu_laporan();
+
+void lap_bulan();
+
 #endif
