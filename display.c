@@ -96,9 +96,11 @@ void waktu(){
 //=======================================================================//
 
 void infouser (void){
+// penggunaan file handling pada program, mendeklarasikan pointer
 	FILE *log, *record;
-	log = fopen("dataLog.txt", "r");		    						// pointer log digunakan untuk membuka file dataLog.txt dengan mode read 
-	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username
+	log = fopen("dataLog.txt", "r");		    	// pointer log digunakan untuk membuka file dataLog.txt dengan mode read 
+	record = fopen("logrecord.txt", "r"); 			/* pointer record digunakan untuk membuka file logrecord.txt dengan mode w 
+                                		           	   (dimana data yang tersimpan akan terus berganti setiap kali login dilakukan)*/
 	while(fgets(&u, BUFFER_SIZE, log)){																					// membaca keseluruhan isi dari dataLog.txt
 		if(strcmp(username, u.username) == 0){																					// membandingkan apakah username logrecord dan username dataLog.txt sama
 		    system("clear");
@@ -118,7 +120,8 @@ void infouser (void){
 			getchar();
 		}
 	}
-	fclose(log);		/*menutup kedua file dataLog.txt*/
+	fclose(log);		/*menutup kedua file dataLog.txt dan leogrecord.txt*/
+	fclose(record);
 	system("clear");
 	home();
 }
@@ -148,10 +151,12 @@ void infouser (void){
 void laporan (){
 	time( & waktuserver);
     struct tm * waktu = localtime( & waktuserver);																											// penggunaan file handling pada program, mendeklarasikan pointer
-	FILE *data;
-	data = fopen("dataLog.txt", "r");  																			// pointer data digunakan untuk membuka file dataLog.txt dengan mode read 
+	// penggunaan file handling pada program, mendeklarasikan pointer
+	FILE *data, *record;
+	data = fopen("dataLog.txt", "r");  			// pointer data digunakan untuk membuka file dataLog.txt dengan mode read 
+	record = fopen("logrecord.txt", "r"); 		// pointer record digunakan untuk membuka file logrecord.txt dengan mode read
 	
-	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username
+	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
 	while(fgets(&u, BUFFER_SIZE, data)){																	// membaca keseluruhan isi dari dataLog.txt
 		if(strcmp(username, u.username) == 0){																		// membandingkan apakah username logrecord dan username dataLog.txt sama
 			system("clear");
@@ -176,7 +181,8 @@ void laporan (){
 		}
 		
 	}
-	fclose(data);		/*menutup file dataLog.txt*/
+	fclose(data);		/*menutup file dataLog.txt dan logrecord.txt*/
+	fclose(record);
 	system("clear");
 	home();
 }
