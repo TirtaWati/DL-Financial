@@ -25,23 +25,21 @@
 **************************************************************************/
 
 void home(){
+    system("clear");
     pilih:
-    printf ("\t\t\t\t\t|================================================|\n");
-    printf ("\t\t\t\t\t|                 HALAMAN UTAMA                  |\n");
-    printf ("\t\t\t\t\t|================================================|\n");
-    printf ("\t\t\t\t\t|   No  |    Pilihan Menu                        |\n");
-    printf ("\t\t\t\t\t|-------|----------------------------------------|\n");
-    printf ("\t\t\t\t\t|   1   |    Pemasukan                           |\n");
-    printf ("\t\t\t\t\t|   2   |    Pengeluaran                         |\n");
-    printf ("\t\t\t\t\t|   3   |    Laporan Transaksi                   |\n");
-    printf ("\t\t\t\t\t|   4   |    INFO AKUN                           |\n");
-    printf ("\t\t\t\t\t|   5   |    LOG OUT                             |\n");
-    printf ("\t\t\t\t\t|   6   |    EXIT                                |\n");
-    printf ("\t\t\t\t\t|================================================|\n"); 
-    printf ("\t\t\t\t\t|================================================|\n");
-    printf ("\n\t\t\t\t\t Input Pilihan Anda = ");
+    printf ("\t\t=======================================================================================\n");
+    printf ("\t\t|                        -----      HALAMAN UTAMA      -----                          |\n");
+    printf ("\t\t|=====================================================================================|\n");
+    printf ("\t\t|      NO      |                   PILIHAN MENU                                       |\n");
+    printf ("\t\t|--------------|----------------------------------------------------------------------|\n");
+    printf ("\t\t|      1       |    Pemasukan                                                         |\n");
+    printf ("\t\t|      2       |    Pengeluaran                                                       |\n");
+    printf ("\t\t|      3       |    Laporan Transaksi                                                 |\n");
+    printf ("\t\t|      4       |    INFO AKUN                                                         |\n");
+    printf ("\t\t|      5       |    EXIT                                                              |\n");
+    printf ("\t\t|=====================================================================================|\n"); 
+    printf ("\n\t\t Input Pilihan Anda :");
     scanf  ("%d",&menuhome);
-    printf ("\t\t\t\t\t|================================================|\n");
     system ("clear");
 
     switch (menuhome)
@@ -56,17 +54,14 @@ void home(){
             break;
         // pada case 3, program akan menampilkan menu laporan dari pemasukan serta pengeluaran user
         case 3:
-            laporan ();
+            menu_laporan();
             break;
         //case 4 masuk ke fungsi infouser()--> file "display.c"
         case 4:
             infouser();
             break;
-        // case 5 program akan menampilkan menu login dan registrasi di awal
+        // case 5 program akan menampilkan menu login dan registrasi di awal    
         case 5:
-            menu_masuk ();
-            break;    
-        case 6:
             exit (0);
             break; 
         default:
@@ -91,17 +86,18 @@ void menu_masuk(){
     int pilihanmasuk;
 
     // Arahan yang diberikan kepada pengguna
+    system("clear");
     arahan:
-    printf ("\n\n\t\t\t\t\t===============================================\n");
-    printf ("\t\t\t\t\t||                 MENU MASUK                ||\n");
-    printf ("\t\t\t\t\t||===========================================||\n");
-    printf ("\t\t\t\t\t||   No  |    Menu                           ||\n");
-    printf ("\t\t\t\t\t||-------|-----------------------------------||\n");
-    printf ("\t\t\t\t\t||   1   |    Masuk                          ||\n");
-    printf ("\t\t\t\t\t||   2   |    Registrasi                     ||\n");
-    printf ("\t\t\t\t\t||   3   |    Exit                           ||\n");
-    printf ("\t\t\t\t\t===============================================\n");
-    printf ("\t\t\t\t\tInput pilihan Anda = ");
+    printf ("\t\t=======================================================================================\n");
+    printf ("\t\t|                      -----      MENU MASUK      -----                               |\n");
+    printf ("\t\t=======================================================================================\n");
+    printf ("\t\t|      NO      |                 PILIHAN MENU                                         |\n");
+    printf ("\t\t|--------------|----------------------------------------------------------------------|\n");
+    printf ("\t\t|      1       |    LOGIN                                                             |\n");
+    printf ("\t\t|      2       |    REGISTRASI                                                        |\n");
+    printf ("\t\t|      3       |    EXIT                                                              |\n");
+    printf ("\t\t|=====================================================================================|\n"); 
+    printf ("\n\t\t Input Pilihan Anda :");
     scanf  ("%d", &pilihanmasuk);
     system ("clear");
 
@@ -124,3 +120,47 @@ void menu_masuk(){
     }
 }
 
+/*************************************************************************|
+|***********************     MENU JENIS LAPORAN      *********************|
+|=========================================================================|
+|TANGGAL PEMBUATAN : 2 JANUARI 2022                                       |
+|OLEH : DWI TIRTA WATI                                                    |
+|DESKRIPSI : Membuat fungsi menu_laporan() untuk menampilkan pilihan jenis|
+|            laporan yang diinginkan                                      |
+|REVISI : 0                                                               |
+**************************************************************************/
+
+void menu_laporan(){
+    int pilih;
+    system("clear");
+    // Arahan yang diberikan kepada pengguna
+    arahan:
+    printf ("\t\t=======================================================================================\n");
+    printf ("\t\t|                      -----      MENU LAPORAN      -----                             |\n");
+    printf ("\t\t=======================================================================================\n");
+    printf ("\t\t|      NO      |                  PILIHAN MENU                                        |\n");
+    printf ("\t\t|--------------|----------------------------------------------------------------------|\n");
+    printf ("\t\t|      1       |    Laporan Keseluruhan                                               |\n");
+    printf ("\t\t|      2       |    Laporan Bulanan                                                   |\n");
+    printf ("\t\t|      3       |    Kembali Ke Halaman Utama                                          |\n");
+    printf ("\t\t|=====================================================================================|\n"); 
+    printf ("\n\t\t Input Pilihan Anda :");
+    scanf  ("%d", &pilih);
+    system ("clear");
+
+    switch (pilih){
+    case 1:
+        laporan ();
+        break;
+    case 2:
+        lap_bulan();
+        break;
+    case 3:
+        home();
+        break;
+    default:
+    	error_alert();
+        goto arahan;
+        break;
+    }
+}
