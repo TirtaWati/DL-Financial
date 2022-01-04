@@ -3,7 +3,7 @@
 #define __VARIABLE_H__
 #include <time.h>
 //define buffer_size ini untuk mendeklarasikan banyak/jumlah buffer max pada file
-#define BUFFER_SIZE 1000
+#define BUFFER_SIZE 100000
 
 // Dekalarasi variable global yang di gunakan pada program catatan keuangan ini:
 time_t waktuserver;                   //variavel curtime           => berfungsi untuk mengambil waktu dari sistem.            
