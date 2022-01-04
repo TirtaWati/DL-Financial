@@ -95,7 +95,7 @@ void daftar(){
 |            yang ada di login agar dapat melakukan strcmp di fungsi lain |
 **************************************************************************/
 void masuk(){
-    waktu();
+    waktusrvr();
     // Membuat pointer log untuk menunjuk pada file "dataLog.txt"
     FILE *log, *record;
     // Membuka file dengan mode "r"
