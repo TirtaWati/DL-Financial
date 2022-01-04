@@ -8,12 +8,12 @@
 //=======================================================================//
 //***********************      REGISTRASI     ***************************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                   	         //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022                   //
-// Revisi	  : 0					                                     //
+// Tgl  	  : 07-12-2021                                   	 //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022               //
+// Revisi	  : 0		                                         //
 // Nama Fungsi    : daftar                                               //
 // Deskripsi      : Membuat Fungsi untuk melakukan registrasi yang akan  //
-//		            akan dimasukkan oleh user.	            			 //
+//		    akan dimasukkan oleh user.	       			 //
 //=======================================================================//
 
 /*************************************************************************|
@@ -76,12 +76,12 @@ void daftar(){
 //=======================================================================//
 //*************************       LOGIN     *****************************//
 //=======================================================================//
-// Tgl  	  : 07-12-2021                                   	         //
-// Oleh		  : Leony Mona Putri Sihaloho - 2105551022                   //
-// Revisi	  : 0					                                     //
+// Tgl  	  : 07-12-2021                                   	 //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022               //
+// Revisi	  : 0			                                 //
 // Nama Fungsi    : masuk                                                //
 // Deskripsi      : Membuat Fungsi untuk melakukan Log In yang akan      //
-//		            akan dimasukkan oleh user.				             //
+//		    akan dimasukkan oleh user.				 //
 //=======================================================================//
 
 /*************************************************************************|
@@ -95,7 +95,7 @@ void daftar(){
 |            yang ada di login agar dapat melakukan strcmp di fungsi lain |
 **************************************************************************/
 void masuk(){
-
+    waktu();
     // Membuat pointer log untuk menunjuk pada file "dataLog.txt"
     FILE *log, *record;
     // Membuka file dengan mode "r"
