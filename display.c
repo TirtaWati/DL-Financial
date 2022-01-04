@@ -46,6 +46,22 @@ void error_alert(){
     printf   ("\t\t\t\t\t||       Silahkan Pilih Pilihan yang Ada     || \n");
 }
 
+//=======================================================================//
+//***********************      WAKTU SERVER    **************************//
+//=======================================================================//
+// Tgl  	  : 02-01-2022                                           //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         //
+// Revisi	  : 0		      					 //
+// Nama Fungsi    : waktu                                                //
+// Deskripsi      : Fungsi waktu() ini digunakan untuk mengambil dan     //
+//                  menampilkan waktu sistem saat user mengakses program.//
+//=======================================================================//
+void waktu(){
+    time( &waktuserver);
+    struct tm * waktu = localtime( & waktuserver);
+    printf("\n\t\t\t\t\t||================Tanggal: %i/%i/%i==============||\n\n", waktu -> tm_mday, waktu -> tm_mon + 1, waktu -> tm_year + 1900);
+}
+
 
 /*************************************************************************|
 |*********************      DISPLAY INFO AKUN      ***********************|
@@ -80,13 +96,9 @@ void error_alert(){
 //=======================================================================//
 
 void infouser (void){
-    																												// penggunaan file handling pada program, mendeklarasikan pointer
 	FILE *log, *record;
-	log = fopen("dataLog.txt", "r");		    																	// pointer log digunakan untuk membuka file dataLog.txt dengan mode read 
-	record = fopen("logrecord.txt", "r"); 																			/* pointer record digunakan untuk membuka file logrecord.txt dengan mode w 
-                                		           	  																 (dimana data yang tersimpan akan terus berganti setiap kali login dilakukan)*/
-
-	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
+	log = fopen("dataLog.txt", "r");		    						// pointer log digunakan untuk membuka file dataLog.txt dengan mode read 
+	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username
 	while(fgets(&u, BUFFER_SIZE, log)){																					// membaca keseluruhan isi dari dataLog.txt
 		if(strcmp(username, u.username) == 0){																					// membandingkan apakah username logrecord dan username dataLog.txt sama
 		    system("clear");
@@ -106,8 +118,7 @@ void infouser (void){
 			getchar();
 		}
 	}
-	fclose(log);		/*menutup kedua file dataLog.txt dan logrecord.txt*/
-	fclose(record);
+	fclose(log);		/*menutup kedua file dataLog.txt*/
 	system("clear");
 	home();
 }
@@ -122,50 +133,50 @@ void infouser (void){
 |REVISI : 0                                                 		  |
 |*************************************************************************/
 
-/*************************************************************************|
-|******************      DISPLAY LAPORAN TRANSAKSI   *********************|
-|=========================================================================|
-|TANGGAL PEMBUATAN : 26 DESEMBER 2021                                     |
-|OLEH : DWI TIRTA WATI                                                    |
-|DESKRIPSI : REVISI FUNGSI LAPORAN() UNTUK TAMPILAN LAPORAN TRANSAKSI     |
-|REVISI : 1                                                               |
-|DESKRIPSI : Menambahkan ctime untuk menampilakan waktu sistem saat		  |
-|            display laporan dipanggil                                    |
-**************************************************************************/
+//=======================================================================//
+//******************     DISPLAY LAPORAN TRANSAKI    ********************//
+//=======================================================================//
+// Tgl  	  : 02-01-2022                                           //
+// Oleh		  : Leony Mona Putri Sihaloho - 2105551022     	         //
+// Revisi	  : 1		      					 //
+// Nama Fungsi    : laporan                                              //
+// Deskripsi      : Menambahkan fungsi waktu() untuk memanggil waktu     //
+//                  sistem dan mengubah struktur tampilan data dari      //
+//                  pemasukan dan pengeluaran sebelumnya.                //
+//=======================================================================//
 
 void laporan (){
-																												// penggunaan file handling pada program, mendeklarasikan pointer
-	FILE *data, *record;
+	time( & waktuserver);
+    struct tm * waktu = localtime( & waktuserver);																											// penggunaan file handling pada program, mendeklarasikan pointer
+	FILE *data;
 	data = fopen("dataLog.txt", "r");  																			// pointer data digunakan untuk membuka file dataLog.txt dengan mode read 
-	record = fopen("logrecord.txt", "r"); 																		// pointer record digunakan untuk membuka file logrecord.txt dengan mode read
-	time(&waktuserver);
-
-	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
-	while(fgets(&u, BUFFER_SIZE, data)){																			// membaca keseluruhan isi dari dataLog.txt
+	
+	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username
+	while(fgets(&u, BUFFER_SIZE, data)){																	// membaca keseluruhan isi dari dataLog.txt
 		if(strcmp(username, u.username) == 0){																		// membandingkan apakah username logrecord dan username dataLog.txt sama
 			system("clear");
+			printf ("\t\t========================================================================================\n");
+			printf ("\t\t                                        PEMASUKAN                                       \n");
+			printf ("\t\t========================================================================================\n");
+			printf ("\t\t|     Tanggal     |     Nama     |     Pemasukan     |     Kategori     |Jumlah Saku\n");
+			printf ("\t\t|%i-%i-%i          %s          Rp%2.f           %s               Rp%2.f\n", waktu -> tm_mday, waktu -> tm_mon + 1, waktu -> tm_year + 1900, &u.nama, u.pemasukan, u.kategori_in, u.saku);
+			printf ("\t\t========================================================================================\n");
+			printf ("\t\t\n                                     PENGELUARAN                                      \n");
+			printf ("\t\t========================================================================================\n");
+			printf ("\t\t|     Tanggal     |     Nama     |     Pengeluaran   |     Kategori     |Jumlah Saku\n");
+			printf ("\t\t|%i-%i-%i          %s          Rp%2.f          %s               Rp%2.f\n", waktu -> tm_mday, waktu -> tm_mon + 1, waktu -> tm_year + 1900, &u.nama, u.pengeluaran, u.kategori_out, u.saku);
+			printf ("\t\t|=======================================================================================|\n");
 			//jika kondisi terpernuhi maka ditampilkan keseluruhan transaksi yang ada dan yang sesuai dengan username
-			printf  ("\t\t\t\t\t===================================================\n");	
-			printf  ("\t\t\t\t\t            LAPORAN TRANSAKSI HARI INI			   \n");
-			printf  ("\t\t\t\t\t%s ", ctime(&waktuserver));
-			printf  ("\t\t\t\t\t---------------------------------------------------\n");
-			printf  ("\t\t\t\t\t  NAMA : %s\n", &u.nama);
-			printf  ("\t\t\t\t\t  SAKU : Rp%2.f\n", u.saku);
-			printf  ("\t\t\t\t\t---------------------------------------------------\n");
-			printf  ("\t\t\t\t\t\t  TOTAL PEMASUKAN      : Rp%2.f\n", u.pemasukan);
-			printf  ("\t\t\t\t\t\t  KATEGORI PEMASUKAN   : %s\n\n", u.kategori_in);
-			printf  ("\t\t\t\t\t\t  TOTAL PENGELUARAN    : Rp%2.f\n", u.pengeluaran);
-			printf  ("\t\t\t\t\t\t  KATEGORI PENGELUARAN : %s\n", u.kategori_out);
+			
 			printf  ("\t\t\t\t\t===================================================\n");
-			printf  ("\t\t\t\t\t     Tekan ENTER untuk kembali Halaaman Utama	   \n");
+			printf  ("\t\t\t\t\t     Tekan ENTER untuk kembali Halaman Utama	   \n");
 			printf  ("\t\t\t\t\t===================================================\n");
 			getchar();
 			getchar();
 		}
 		
 	}
-	fclose(data);		/*menutup kedua file dataLog.txt dan logrecord.txt*/
-	fclose(record);
+	fclose(data);		/*menutup kedua file dataLog.txt*/
 	system("clear");
 	home();
 }
