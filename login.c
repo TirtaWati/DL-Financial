@@ -108,15 +108,15 @@ void masuk(){
                                                      (dimana data yang tersimpan akan terus berganti setiap kali login dilakukan)*/
 
     // Arahan untuk LOGIN
-    printf ("\n\n\t\t\t\t\t=====================\n");
-    printf ("\t\t\t\t\t        LOGIN\n");
-    printf ("\t\t\t\t\t---------------------\n");
-    printf ("\t\t\t\t\t Username: ");
+    printf ("\n\t\t\t\t\t\t\t=====================\n");
+    printf ("\t\t\t\t\t\t\t        LOGIN\n");
+    printf ("\t\t\t\t\t\t\t---------------------\n");
+    printf ("\t\t\t\t\t\t\t Username: ");
     scanf  ("%s", &username);
-    printf ("\t\t\t\t\t---------------------\n");
-    printf ("\t\t\t\t\t Password: ");
+    printf ("\t\t\t\t\t\t\t---------------------\n");
+    printf ("\t\t\t\t\t\t\t Password: ");
     scanf  ("%s", &password);
-    printf ("\t\t\t\t\t--------------------\n");
+    printf ("\t\t\t\t\t\t\t--------------------\n");
     system ("clear");
     
     //value username ditulis dan disimpan pada file logrecord
