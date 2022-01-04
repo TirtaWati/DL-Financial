@@ -66,13 +66,13 @@ void pemasukan (){
           if(strcmp(username, u.username) == 0){        // membandingkan apakah username logrecord dan username dataLog.txt sama
             found = 1;                                  // memberi nilai pada varible found untuk menyatakan bahwa baris data yang dituju ada 
             // tampilan penginputan pemasukan dan ketegori pemasukan
-            printf ("\n\n\t\t\t\t\t================================\n");
-            printf ("\t\t\t\t\t    Pemasukan Anda Hari ini\n");
-            printf ("\t\t\t\t\t--------------------------------\n");
-            printf ("\t\t\t\t\t Pemasukan : ");
+            printf ("\t\t=======================================================================================\n");
+            printf ("\t\t                      ------   Pemasukan Anda Hari ini   ------                        \n");
+            printf ("\t\t=======================================================================================\n");
+            printf ("\t\t               Pemasukan : ");
             scanf  ("%f", &t_pemasukan);
-            printf ("\t\t\t\t\t--------------------------------\n");
-            printf ("\t\t\t\t\t Kategori  : ");
+            printf ("\t\t---------------------------------------------------------------------------------------\n");
+            printf ("\t\t               Kategori  : ");
             scanf  ("%s", &u.kategori_in);
             u.saku += t_pemasukan;           //menjumlahkan pemasukan dengan jumlah dari u.saku
             u.pemasukan += t_pemasukan;      //menjumlahkan pemasukan baru dengan pemasukan sebelumnya 
@@ -97,11 +97,11 @@ void pemasukan (){
 
         // tampilan ketika data berhasil diinputkan dan kembali ke menu home
         system("clear");
-        printf  ("\t\t\t\t\t=============================================\n");
-        printf  ("\t\t\t\t\t          Data Berhasil diinputkan!!         \n");
-        printf  ("\t\t\t\t\t---------------------------------------------\n");
-        printf  ("\t\t\t\t\t       Tekan ENTER  untuk melanjutkan....    \n");
-        printf  ("\t\t\t\t\t=============================================\n");
+        printf  ("\t\t=======================================================================================\n");
+        printf  ("\t\t                             DATA BERHASIL DISIMPAN!!         \n");
+        printf  ("\t\t---------------------------------------------------------------------------------------\n");
+        printf  ("\t\t                         Tekan ENTER  untuk melanjutkan....    \n");
+        printf  ("\t\t=======================================================================================\n");
         getchar();
         getchar();
     }
@@ -170,13 +170,13 @@ void pengeluaran (){
     {
           if(strcmp(username, u.username) == 0){
             found = 1;
-            printf ("\n\n\t\t\t\t\t================================\n");
-            printf ("\t\t\t\t\t    Pengeluaran Anda Hari ini\n");
-            printf ("\t\t\t\t\t--------------------------------\n");
-            printf ("\t\t\t\t\t Pengeluaran : ");
+            printf ("\t\t=======================================================================================\n");
+            printf ("\t\t                           Pengeluaran Anda Hari ini\n");
+            printf ("\t\t=======================================================================================\n");
+            printf ("\t\t                   Pengeluaran : ");
             scanf  ("%f", &t_pengeluaran);
-            printf ("\t\t\t\t\t--------------------------------\n");
-            printf ("\t\t\t\t\t Kategori    : ");
+            printf ("\t\t---------------------------------------------------------------------------------------\n");
+            printf ("\t\t                   Kategori    : ");
             scanf  ("%s", &u.kategori_out);
             u.saku -= t_pengeluaran;        // mengurangi jumlah dari u.saku dengan total pengeluaran
             u.pengeluaran += t_pengeluaran;
@@ -202,11 +202,11 @@ void pengeluaran (){
         
         // tampilan ketika data berhasil diinputkan dan kembali ke menu home
         system("clear");
-        printf  ("\t\t\t\t\t=============================================\n");
-        printf  ("\t\t\t\t\t          Data Berhasil diinputkan!!         \n");
-        printf  ("\t\t\t\t\t---------------------------------------------\n");
-        printf  ("\t\t\t\t\t       Tekan ENTER  untuk melanjutkan....    \n");
-        printf  ("\t\t\t\t\t=============================================\n");
+        printf  ("\t\t=======================================================================================\n");
+        printf  ("\t\t                             DATA BERHASIL DISIMPAN!!         \n");
+        printf  ("\t\t---------------------------------------------------------------------------------------\n");
+        printf  ("\t\t                         Tekan ENTER  untuk melanjutkan....    \n");
+        printf  ("\t\t=======================================================================================\n");
         getchar();
         getchar();
     }
