@@ -176,7 +176,7 @@ void laporan (){
 		}
 		
 	}
-	fclose(data);		/*menutup kedua file dataLog.txt*/
+	fclose(data);		/*menutup file dataLog.txt*/
 	system("clear");
 	home();
 }
