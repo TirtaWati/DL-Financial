@@ -2,6 +2,13 @@
 #define __STRUCTURE_H__
 #include "variable.h"
 
+struct waktu
+{
+    int bulan;
+    int tgl;
+    int tahun;
+}waktu;
+
 typedef struct {
     char nama[30];
     char username[10];
