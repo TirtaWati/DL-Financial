@@ -44,6 +44,9 @@ void header (void){
 void error_alert(){
     printf   ("\n\n\t\t\t\t\t||            Pilihan Tidak Ada!!!           || \n");
     printf   ("\t\t\t\t\t||       Silahkan Pilih Pilihan yang Ada     || \n");
+	getchar();
+	getchar();
+	system("clear");
 }
 
 //=======================================================================//
@@ -59,7 +62,7 @@ void error_alert(){
 void waktusrvr(){
     time( &waktuserver);
     struct tm * waktu = localtime( & waktuserver);
-    printf("\n\t\t\t\t\t||=============================Tanggal: %i/%i/%i================================||\n\n", waktu -> tm_mday, waktu -> tm_mon + 1, waktu -> tm_year + 1900);
+    printf("\n\t\t||=============================Tanggal: %i/%i/%i================================||\n\n", waktu -> tm_mday, waktu -> tm_mon + 1, waktu -> tm_year + 1900);
 }
 
 
@@ -175,7 +178,6 @@ void laporan (){
 	record = fopen("logrecord.txt", "r"); 																		// pointer record digunakan untuk membuka file logrecord.txt dengan mode read
 	trans = fopen("transaski.txt", "a");
 
-
 	//membaca username yang ada di file dataLog.txt dan mencari kesamaan antar username yang ada di logrecord
 	while(fgets(&u, BUFFER_SIZE, data)){																	// membaca keseluruhan isi dari dataLog.txt
 		if(strcmp(username, u.username) == 0){																		// membandingkan apakah username logrecord dan username dataLog.txt sama
@@ -183,19 +185,15 @@ void laporan (){
 			printf ("\t\t========================================================================================\n");
 			printf ("\t\t                                        PEMASUKAN                                       \n");
 			printf ("\t\t========================================================================================\n");
-			printf ("\t\t|     Nama     		|     Pemasukan     |        Kategori  		|	Jumlah Saku	   	 \n");
-			printf ("\t\t|%s             		Rp%2.f             %s                 	  Rp%2.f			 \n", &u.nama, u.pemasukan, u.kategori_in, u.saku);
+			printf ("\t\t       Nama        |     Pemasukan     |        Kategori       |    Jumlah Saku	   	 \n");
+			printf ("\t\t%s                  Rp%2.f              %s                      Rp%2.f			 \n", &u.nama, u.pemasukan, u.kategori_in, u.saku);
 			printf ("\t\t========================================================================================\n");
 			printf ("\t\t\n                                     PENGELUARAN                                      \n");
 			printf ("\t\t========================================================================================\n");
-			printf ("\t\t|     Nama     		|     Pengeluaran   |        Kategori  		|	Jumlah Saku	 \n");
-			printf ("\t\t|%s          			Rp%2.f             %s               	  Rp%2.f				 \n", &u.nama, u.pengeluaran, u.kategori_out, u.saku);
-			printf ("\t\t|=======================================================================================|\n");
-			//jika kondisi terpernuhi maka ditampilkan keseluruhan transaksi yang ada dan yang sesuai dengan username
-			
-			printf  ("\t\t=======================================================================================\n");
-			printf  ("\t\t\t\t\t\t     Tekan ENTER untuk kembali Halaman Utama	   \n");
-			printf  ("\t\t=======================================================================================\n");
+			printf ("\t\t       Nama        |    Pengeluaran    |        Kategori       |    Jumlah Saku         \n");
+			printf ("\t\t%s                  Rp%2.f              %s                      Rp%2.f				 \n", &u.nama, u.pengeluaran, u.kategori_out, u.saku);
+			printf ("\t\t========================================================================================\n");
+			printf ("\t\t--------------------   Tekan ENTER untuk kembali Halaman Utama   -----------------------\n");
 			getchar();
 			getchar();
 
@@ -204,16 +202,15 @@ void laporan (){
 			fprintf (trans, "\t\t========================================================================================\n");
 			fprintf (trans, "\t\t                                        PEMASUKAN                                       \n");
 			fprintf (trans, "\t\t========================================================================================\n");
-			fprintf (trans, "\t\t|     Tanggal     |     Nama     |     Pemasukan     |     Kategori     |Jumlah Saku	 \n");
-			fprintf (trans, "\t\t|%02i/%02i/%i          %s          Rp%2.f           %s               Rp%2.f			 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pemasukan, u.kategori_in, u.saku);
+			fprintf (trans, "\t\t    Tanggal    |      Nama      |     Pemasukan     |     Kategori     |   Jumlah Saku	 \n");
+			fprintf (trans, "\t\t%02i/%02i/%i    %s               Rp%2.f              %s                 Rp%2.f			 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pemasukan, u.kategori_in, u.saku);
 			fprintf (trans, "\t\t========================================================================================\n");
 			fprintf (trans, "\t\t\n                                     PENGELUARAN                                      \n");
 			fprintf (trans, "\t\t========================================================================================\n");
-			fprintf (trans, "\t\t|     Tanggal     |     Nama     |     Pengeluaran   |     Kategori     |Jumlah Saku	 \n");
-			fprintf (trans, "\t\t|%02i/%02i/%i          %s          Rp%2.f          %s               Rp%2.f				 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pengeluaran, u.kategori_out, u.saku);
-			fprintf (trans, "\t\t|=======================================================================================|\n\n");
+			fprintf (trans, "\t\t    Tanggal    |      Nama      |    Pengeluaran    |     Kategori     |   Jumlah Saku	 \n");
+			fprintf (trans, "\t\t%02i/%02i/%i          %s          Rp%2.f           %s               Rp%2.f				 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pengeluaran, u.kategori_out, u.saku);
+			fprintf (trans, "\t\t========================================================================================\n");
 		}
-		
 	}
 	fclose(data);		/*menutup file dataLog.txt dan logrecord.txt*/
 	fclose(record);
@@ -238,43 +235,51 @@ void lap_bulan(){
 	char buff[BUFFER_SIZE];
 	trans = fopen("transaski.txt", "r");
 	record = fopen("logrecord.txt", "r");
-	printf("masukan bulan: ");
+	
+	printf ("========================================================================================\n");
+	printf ("               ----   Masukan Nomor Bulan Yang Ingin Ditampilkan   ---                  \n");
+	printf (" Keterangan:\n");
+	printf (" JANUARI   --> 1	FEBRUARI --> 2		MARET    --> 3		APRIL    --> 4\n");
+	printf (" MEI       --> 5	JUNI	 --> 6		JULI     --> 7		AGUSTUS  --> 8\n");
+	printf (" SEPTEMBER --> 9	OKTOBER  --> 10		NOVEMBER --> 11		DESEMBER --> 12\n");
+	printf ("========================================================================================\n");
+	printf("\n\nMasukan nomor bulan: ");
 	scanf("%i", &bulan);
 
 	while(fgets(&buff, BUFFER_SIZE, trans)){
 		if(strcmp(&u.username, &username)== 0 && waktu.bulan == bulan){
 			system("clear");
-
 			printf ("\t\t========================================================================================\n");
 			printf ("\t\t                                        PEMASUKAN                                       \n");
 			printf ("\t\t========================================================================================\n");
-			printf ("\t\t|     Tanggal     |     Nama     |     Pemasukan     |     Kategori     |Jumlah Saku	 \n");
-			printf ("\t\t|%02i/%02i/%i          %s          Rp%2.f           %s               Rp%2.f			 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pemasukan, u.kategori_in, u.saku);
+			printf ("\t\t     Tanggal     |     Nama     |     Pemasukan     |     Kategori     |Jumlah Saku	 \n");
+			printf ("\t\t%02i/%02i/%i          %s          Rp%2.f           %s               Rp%2.f			 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pemasukan, u.kategori_in, u.saku);
 			printf ("\t\t========================================================================================\n");
 			printf ("\t\t\n                                     PENGELUARAN                                      \n");
 			printf ("\t\t========================================================================================\n");
-			printf ("\t\t|     Tanggal     |     Nama     |     Pengeluaran   |     Kategori     |Jumlah Saku	 \n");
-			printf ("\t\t|%02i/%02i/%i          %s          Rp%2.f          %s               Rp%2.f				 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pengeluaran, u.kategori_out, u.saku);
-			printf ("\t\t|=======================================================================================|\n");
-			//jika kondisi terpernuhi maka ditampilkan keseluruhan transaksi yang ada dan yang sesuai dengan username
-			
-			printf  ("\t\t\t\t\t===================================================\n");
-			printf  ("\t\t\t\t\t     Tekan ENTER untuk kembali Halaman Utama	   \n");
-			printf  ("\t\t\t\t\t===================================================\n");
+			printf ("\t\t     Tanggal     |     Nama     |     Pengeluaran   |     Kategori     |Jumlah Saku	 \n");
+			printf ("\t\t%02i/%02i/%i          %s          Rp%2.f          %s               Rp%2.f				 \n", waktu.bulan, waktu.tgl, waktu.tahun, &u.nama, u.pengeluaran, u.kategori_out, u.saku);
+			printf ("\t\t========================================================================================\n");
+			printf ("\t\t--------------------   Tekan ENTER untuk kembali Halaman Utama   -----------------------\n");
 			getchar();
 			getchar();
+			system("clear");
 			menu_laporan();
+			
 		}
 		else{
 			printf  ("\t\t\t\t\t===================================================\n");
-			printf  ("\t\t\t			Riwayat Tidak Ditemukan!			   \n");
+			printf  ("\t\t\t\t\t             Riwayat Tidak Ditemukan!			   \n");
 			printf  ("\t\t\t\t\t===================================================\n");
 			getchar();
 			getchar();
+			system("clear");
 			menu_laporan();
 		}
 	}
 	fclose(trans);
+	fclose(record);
+	
 
 
 }
